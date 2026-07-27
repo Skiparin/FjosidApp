@@ -18,14 +18,14 @@ export default function Home() {
 
   return (
     <div>
-      {/* ── Hero ── */}
-      <div className="relative h-[92vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+      {/* ── Hero: full height minus sticky header ── */}
+      <div className="relative h-[calc(100vh-4rem)] min-h-[600px] flex items-center justify-center overflow-hidden">
         <img
           src="/images/høli_11.jpg"
           alt={t('home.imageTitle')}
           className="absolute inset-0 w-full h-full object-cover object-[50%_79%]"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/65" />
         <div className="relative z-10 text-center px-6 max-w-3xl">
           <p className="text-amber-400 text-sm font-medium tracking-[0.3em] uppercase mb-4">
             {t('home.location_tag')}
@@ -59,82 +59,80 @@ export default function Home() {
       </div>
 
       {/* ── Detail sections ── */}
-      <div>
-        {/* Section 1 */}
-        <Section className="grid md:grid-cols-2">
-          <div className="relative h-80 md:h-auto overflow-hidden">
-            <img src="/images/høli_2.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />
-          </div>
-          <div className="flex flex-col justify-center px-10 py-16 bg-[#fdfcf9]">
-            <span className="text-amber-600 text-xs uppercase tracking-widest font-medium mb-3">
-              {t('home.section1_tag')}
-            </span>
-            <h2 className="font-display text-3xl sm:text-4xl font-semibold text-stone-800 mb-5 leading-snug">
-              {t('home.detailsTitle1')}
-            </h2>
-            <p className="text-stone-500 text-[15px] leading-relaxed mb-8">{t('home.details1')}</p>
-            <button
-              onClick={() => navigate('/booking')}
-              className="self-start inline-flex items-center gap-2 text-sm font-semibold text-amber-600 hover:text-amber-500 transition-colors group"
-            >
-              {t('home.bookingButton')}
-              <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
-            </button>
-          </div>
-        </Section>
+      {/* Section 1 */}
+      <Section className="grid md:grid-cols-2 border-b border-stone-200">
+        <div className="relative h-80 md:h-[520px] overflow-hidden">
+          <img src="/images/høli_2.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        </div>
+        <div className="flex flex-col justify-center px-12 py-20 bg-[#fdfcf9]">
+          <span className="text-amber-600 text-xs uppercase tracking-widest font-medium mb-4">
+            {t('home.section1_tag')}
+          </span>
+          <h2 className="font-display text-3xl sm:text-4xl font-semibold text-stone-800 mb-6 leading-snug">
+            {t('home.detailsTitle1')}
+          </h2>
+          <p className="text-stone-500 text-[15px] leading-relaxed mb-10">{t('home.details1')}</p>
+          <button
+            onClick={() => navigate('/booking')}
+            className="self-start inline-flex items-center gap-2 text-sm font-semibold text-amber-600 hover:text-amber-500 transition-colors group"
+          >
+            {t('home.bookingButton')}
+            <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
+          </button>
+        </div>
+      </Section>
 
-        {/* Section 2 */}
-        <Section className="grid md:grid-cols-2 bg-stone-50">
-          <div className="flex flex-col justify-center px-10 py-16 order-2 md:order-1">
-            <span className="text-amber-600 text-xs uppercase tracking-widest font-medium mb-3">
-              {t('home.section2_tag')}
-            </span>
-            <h2 className="font-display text-3xl sm:text-4xl font-semibold text-stone-800 mb-5 leading-snug">
-              {t('home.detailsTitle2')}
-            </h2>
-            <p className="text-stone-500 text-[15px] leading-relaxed mb-8">{t('home.details2')}</p>
-            <a
-              href="/images/Menu.pdf"
-              target="_blank"
-              className="self-start inline-flex items-center gap-2 text-sm font-semibold text-amber-600 hover:text-amber-500 transition-colors group"
-            >
-              {t('home.menuButton')}
-              <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
-            </a>
-          </div>
-          <div className="relative h-80 md:h-auto overflow-hidden order-1 md:order-2">
-            <img src="/images/neyt_1.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />
-          </div>
-        </Section>
+      {/* Section 2 */}
+      <Section className="grid md:grid-cols-2 border-b border-stone-200">
+        <div className="flex flex-col justify-center px-12 py-20 bg-stone-50 order-2 md:order-1">
+          <span className="text-amber-600 text-xs uppercase tracking-widest font-medium mb-4">
+            {t('home.section2_tag')}
+          </span>
+          <h2 className="font-display text-3xl sm:text-4xl font-semibold text-stone-800 mb-6 leading-snug">
+            {t('home.detailsTitle2')}
+          </h2>
+          <p className="text-stone-500 text-[15px] leading-relaxed mb-10">{t('home.details2')}</p>
+          <a
+            href="/images/Menu.pdf"
+            target="_blank"
+            className="self-start inline-flex items-center gap-2 text-sm font-semibold text-amber-600 hover:text-amber-500 transition-colors group"
+          >
+            {t('home.menuButton')}
+            <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
+          </a>
+        </div>
+        <div className="relative h-80 md:h-[520px] overflow-hidden order-1 md:order-2">
+          <img src="/images/neyt_1.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        </div>
+      </Section>
 
-        {/* Section 3 */}
-        <Section className="grid md:grid-cols-2">
-          <div className="relative h-80 md:h-auto overflow-hidden">
-            <img src="/images/eplir_1.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />
-          </div>
-          <div className="flex flex-col justify-center px-10 py-16 bg-[#fdfcf9]">
-            <span className="text-amber-600 text-xs uppercase tracking-widest font-medium mb-3">
-              {t('home.section3_tag')}
-            </span>
-            <h2 className="font-display text-3xl sm:text-4xl font-semibold text-stone-800 mb-5 leading-snug">
-              {t('home.detailsTitle3')}
-            </h2>
-            <p className="text-stone-500 text-[15px] leading-relaxed mb-8">{t('home.details3')}</p>
-            <button
-              onClick={() => navigate('/gallery')}
-              className="self-start inline-flex items-center gap-2 text-sm font-semibold text-amber-600 hover:text-amber-500 transition-colors group"
-            >
-              {t('home.galleryButton')}
-              <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
-            </button>
-          </div>
-        </Section>
-      </div>
+      {/* Section 3 */}
+      <Section className="grid md:grid-cols-2 border-b border-stone-200">
+        <div className="relative h-80 md:h-[520px] overflow-hidden">
+          <img src="/images/eplir_1.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        </div>
+        <div className="flex flex-col justify-center px-12 py-20 bg-[#fdfcf9]">
+          <span className="text-amber-600 text-xs uppercase tracking-widest font-medium mb-4">
+            {t('home.section3_tag')}
+          </span>
+          <h2 className="font-display text-3xl sm:text-4xl font-semibold text-stone-800 mb-6 leading-snug">
+            {t('home.detailsTitle3')}
+          </h2>
+          <p className="text-stone-500 text-[15px] leading-relaxed mb-10">{t('home.details3')}</p>
+          <button
+            onClick={() => navigate('/gallery')}
+            className="self-start inline-flex items-center gap-2 text-sm font-semibold text-amber-600 hover:text-amber-500 transition-colors group"
+          >
+            {t('home.galleryButton')}
+            <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
+          </button>
+        </div>
+      </Section>
 
-      {/* ── What we offer ── */}
-      <Section className="py-24 bg-[#111]">
+      {/* ── What we offer ── warm dark, amber top rule ── */}
+      <Section className="py-28 bg-stone-900 border-t-2 border-amber-500">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-14">
+          <div className="text-center mb-16">
             <p className="text-amber-500 text-xs uppercase tracking-widest font-medium mb-3">
               {t('home.offersTag')}
             </p>
@@ -142,23 +140,24 @@ export default function Home() {
               {t('home.whatWeOffer')}
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             <OfferCard img="/images/luttakarar_3_2.jpg" label={t('home.dining')}  href="/images/Menu.pdf" navigate={navigate} />
-            <OfferCard img="/images/luttakarar_7.jpg"   label={t('home.events')}  to="/meetings"        navigate={navigate} />
-            <OfferCard img="/images/matur_14.jpg"        label={t('home.venue')}   to="/rent-as-venue"   navigate={navigate} />
+            <OfferCard img="/images/luttakarar_7.jpg"   label={t('home.events')}  to="/meetings"         navigate={navigate} />
+            <OfferCard img="/images/matur_14.jpg"        label={t('home.venue')}   to="/rent-as-venue"    navigate={navigate} />
           </div>
         </div>
       </Section>
 
       {/* ── About us teaser ── */}
-      <Section className="py-24 bg-[#fdfcf9]">
+      <Section className="py-24 bg-[#fdfcf9] border-t border-stone-200">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="grid grid-cols-2 gap-3">
-              <img src="/images/jenny_heri.jpg"    alt="Jenny & Heri"    className="w-full h-52 object-cover rounded shadow-sm" />
-              <img src="/images/eyðfinn_poula.jpg" alt="Eyðfinn & Poula" className="w-full h-52 object-cover rounded shadow-sm mt-6" />
-              <img src="/images/tórður.jpg"         alt="Tórður"          className="w-full h-52 object-cover rounded shadow-sm" />
-              <img src="/images/trondur.jpg"        alt="Tróndur"         className="w-full h-52 object-cover rounded shadow-sm mt-6" />
+            {/* 2×2 image grid — taller images, offset stagger */}
+            <div className="grid grid-cols-2 gap-4">
+              <img src="/images/jenny_heri.jpg"    alt="Jenny & Heri"    className="w-full h-64 object-cover rounded shadow-sm" />
+              <img src="/images/eyðfinn_poula.jpg" alt="Eyðfinn & Poula" className="w-full h-64 object-cover rounded shadow-sm mt-8" />
+              <img src="/images/tórður.jpg"         alt="Tórður"          className="w-full h-64 object-cover rounded shadow-sm" />
+              <img src="/images/trondur.jpg"        alt="Tróndur"         className="w-full h-64 object-cover rounded shadow-sm mt-8" />
             </div>
             <div>
               <p className="text-amber-600 text-xs uppercase tracking-widest font-medium mb-4">
@@ -182,17 +181,27 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* ── Map ── */}
-      <Section>
-        <div className="text-center py-12 px-6 bg-stone-50">
-          <p className="text-amber-600 text-xs uppercase tracking-widest font-medium mb-3">
-            {t('home.mapTag')}
-          </p>
-          <h2 className="font-display text-4xl font-semibold text-stone-800 mb-8">
-            {t('home.location')}
-          </h2>
+      {/* ── Map — satellite view ── */}
+      <Section className="border-t border-stone-200">
+        <div className="flex items-center justify-between px-8 sm:px-14 py-8 bg-stone-50">
+          <div>
+            <p className="text-amber-600 text-xs uppercase tracking-widest font-medium mb-1">
+              {t('home.mapTag')}
+            </p>
+            <h2 className="font-display text-2xl font-semibold text-stone-800">
+              {t('home.location')}
+            </h2>
+          </div>
+          <a
+            href="https://maps.google.com/?q=62.086239,-7.371621"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium text-amber-600 hover:text-amber-500 transition-colors inline-flex items-center gap-1"
+          >
+            Google Maps <ArrowRight size={14} />
+          </a>
         </div>
-        <div className="w-full h-[450px]">
+        <div className="w-full h-[480px]">
           <iframe
             title={t('home.location')}
             width="100%"
@@ -200,7 +209,7 @@ export default function Home() {
             style={{ border: 0, display: 'block' }}
             loading="lazy"
             allowFullScreen
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1488.4!2d-7.371621!3d62.086239!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNjLCsDA1JzEwLjUiTiA3wrAyMicxNy44Ilc!5e0!3m2!1sen!2sfo!4v1680000000000!5m2!1sen!2sfo"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1488.4!2d-7.371621!3d62.086239!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNjLCsDA1JzEwLjUiTiA3wrAyMicxNy44Ilc!5e1!3m2!1sen!2sfo!4v1680000000000!5m2!1sen!2sfo"
           />
         </div>
       </Section>
@@ -215,10 +224,10 @@ function OfferCard({
   navigate: (path: string) => void;
 }) {
   const inner = (
-    <div className="group relative overflow-hidden cursor-pointer">
+    <div className="group relative overflow-hidden cursor-pointer rounded-sm">
       <div className="relative h-80 overflow-hidden">
         <img src={img} alt={label} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-        <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent group-hover:from-black/55 transition-colors" />
       </div>
       <div className="absolute bottom-0 left-0 right-0 p-6">
         <h3 className="font-display text-white text-xl font-semibold">{label}</h3>

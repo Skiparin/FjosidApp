@@ -1,6 +1,7 @@
 const en = {
   nav: {
     home: 'Home',
+    about: 'About us',
     menu: 'Menu',
     booking: 'Booking',
     meetings: 'Meetings',
@@ -39,17 +40,42 @@ const en = {
 
     teamTag: 'The team',
     aboutUs: 'About us',
-    jennyHeri:
-      'Heri is the farmer and the one who came up with the idea of making part of the barn into a restaurant/venue. Jenny is the wife, boss, chef and cleaner.',
-    eydsteinEllef:
-      'Our friends Eystein and Ellef, who run Bluegate.fo, add a bit of adventure to our experience. They offer sightseeing tours on their fast boats, making it easy for our guests to enjoy a day on the water and a meal in our barn.',
-    eydfinnPoula:
-      "Eyðfinn, Heri's cousin, helped turn the barn into what Fjósið is today. Together with his wife Poula, they're a big part of our day-to-day life here, helping in the kitchen and keeping the place running smoothly.",
-    tordur:
-      "Tórður, Eyðfinn and Poula's son, is about to become a constructor. He's been involved in making Fjósið a reality and represents the next generation of our community, blending old traditions with new ideas.",
+    aboutTeaser: 'Behind Fjósið is a close group of people who share a love of good food, craftsmanship and the Faroese landscape. From the founder who built the barn in 1978 to the team keeping it alive today.',
+    aboutButton: 'Meet the team',
 
     mapTag: 'Find us',
     location: 'Location',
+  },
+
+  about: {
+    pageTag: 'Our story',
+    title: 'About Fjósið',
+    intro: 'A family farm, a vision, and a community — this is the story of Fjósið.',
+
+    historyTag: 'Where it all began',
+    historyTitle: 'The story of Fjósið',
+
+    joanRole: 'Founder & farmer',
+    joanBadge: 'The farm was founded',
+    joanText1: 'Jóan Hendrik Guttesen began farming in Bøur in 1976. Two years later, in 1978, he built the barn that would one day become Fjósið — a sturdy, traditional structure that has stood at the heart of the farm ever since.',
+    joanText2: 'In 1996, his son Heri Guttesen took over the farm and later transformed the upper part of the barn into the unique restaurant and venue it is today. Jóan Hendrik remains a proud part of the story and the family legacy.',
+
+    quote: 'From a barn built in 1978 to a dining destination known across the Faroe Islands.',
+
+    teamTag: 'The owners',
+    teamTitle: 'Meet the team',
+    teamSubtitle: 'The people who keep Fjósið alive — from the kitchen to the land.',
+
+    jennyHeri:
+      'Heri is the farmer and the one who came up with the idea of making part of the barn into a restaurant and venue. Jenny is the wife, boss, head chef and the one who keeps everything running.',
+    eydsteinEllef:
+      'Our friends Eystein and Ellef, who run Bluegate.fo, add a spirit of adventure to the Fjósið experience. They offer sightseeing tours on their fast boats, making it easy to combine a day on the water with a meal in the barn.',
+    eydfinnPoula:
+      "Eyðfinn, Heri's cousin, was central to transforming the barn into what Fjósið is today. Together with his wife Poula, they are a cornerstone of our daily operations — helping in the kitchen and keeping the place running smoothly.",
+    tordur:
+      "Tórður, son of Eyðfinn and Poula, is training to be a builder. He has been hands-on in bringing Fjósið to life and represents the next generation — bridging old traditions with fresh ideas.",
+    trondur:
+      "Tróndur and Heri kept dairy cattle together for several years before going their separate ways in 2007. He now drives an ambulance and has turned another dream into reality by building four holiday cottages in Bøur — which he rents out under the fitting name Útsýnið. A man of many talents: painting, carpentry and singing are just a few of them.",
   },
 
   booking: {
@@ -168,6 +194,7 @@ const en = {
     copyright: '© {{year}} Fjósið. All rights reserved.',
     navLinks: {
       home: 'Home',
+      about: 'About us',
       menu: 'Menu',
       booking: 'Booking',
       meetings: 'Meetings',

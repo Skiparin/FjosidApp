@@ -1,6 +1,7 @@
 const fo = {
   nav: {
     home: 'Heim',
+    about: 'Um okkum',
     menu: 'Menu',
     booking: 'Bóking',
     meetings: 'Fundir',
@@ -39,17 +40,42 @@ const fo = {
 
     teamTag: 'Fólkið',
     aboutUs: 'Um okkum',
-    jennyHeri:
-      'Heri er bóndin og tann, sum kom við hugskotið at gera ein part av fjósinum til ein matsal/hølið. Jenny er konan, leiðarin, kokkurin og reingerðarfólkið.',
-    eydsteinEllef:
-      'Vinir okkara, Eystein og Ellef, sum reka Bluegate.fo, leggja eitt sindur av ævintýri til okkara uppliving. Teir bjóða siglitúrar við sínum skjótbátum, so okkara gestir lættliga kunnu njóta ein dag á sjónum og eina máltíð í okkara fjósi.',
-    eydfinnPoula:
-      'Eyðfinn, systkinabarni hjá Hera, hjálpti at umskapa fjósið til tað, sum Fjósið er í dag. Saman við konu síni, Poulu, eru tey ein stórur partur av okkara gerandisdegi her, hjálpa til í køkinum og tryggja, at alt gongur smidliga.',
-    tordur:
-      'Tórður, sonur Eyðfinns og Poulu, er um at gerast byggimeistari. Hann hevur verið við til at gera Fjósið til veruleika og umboðar næstu ættarlið í okkara samfelag, har hann sameinir gamlar siðvenjur við nýggjum hugskotum.',
+    aboutTeaser: 'Aftanfyri Fjósið er ein náin bólkur av fólki, sum deila kærleika til góðan mat, handverk og føroyskt landslag. Frá stiftaranum, sum bygdi fjósið í 1978, til lið dagsins í dag.',
+    aboutButton: 'Møt liðið',
 
     mapTag: 'Finn okkum',
     location: 'Staðseting',
+  },
+
+  about: {
+    pageTag: 'Søgan okkar',
+    title: 'Um Fjósið',
+    intro: 'Ein bóndargarður, ein dreymur og eitt samfelag — hetta er søgan um Fjósið.',
+
+    historyTag: 'Har tað byrjaði',
+    historyTitle: 'Søgan um Fjósið',
+
+    joanRole: 'Stiftari og bóndi',
+    joanBadge: 'Garðurin varð stovnaður',
+    joanText1: 'Jóan Hendrik Guttesen byrjaði at reka búskap í Bø í 1976. Tveir ár seinni, í 1978, bygdi hann fjósið, sum seinni skuldi verða Fjósið — ein sterkur, vanligur bygningurin, sum hevur stóðið í hjarta garðsins síðan.',
+    joanText2: 'Í 1996 tók sonur hansara, Heri Guttesen, við garðinum og umbreytti seinni tann efri partin av fjósinum til tann einastandandi matsal og høli, sum hann er í dag. Jóan Hendrik er enn stóltur partur av søguni og ættarsøguni.',
+
+    quote: 'Frá einum fjósi bygdum í 1978 til eitt matstaðarviðurmerki kunnað um allar Føroyar.',
+
+    teamTag: 'Eigarar',
+    teamTitle: 'Møt liðið',
+    teamSubtitle: 'Fólkini, sum halda Fjósið lívandi — frá køkinum til landið.',
+
+    jennyHeri:
+      'Heri er bóndin og tann, sum kom við hugskotið at gera ein part av fjósinum til ein matsal og høli. Jenny er konan, leiðarin, høvuðskokkurin og tann, sum heldur øllu gangandi.',
+    eydsteinEllef:
+      'Vinir okkara, Eystein og Ellef, sum reka Bluegate.fo, leggja ein ævintýraanda til Fjósið-upplivingina. Teir bjóða siglitúrar við sínum skjótbátum, sum gera tað lættliga at sameina ein dag á sjónum við eina máltíð í fjósinum.',
+    eydfinnPoula:
+      'Eyðfinn, systkinabarni hjá Hera, var miðbýtingurin í at umbreyta fjósið til tað, sum Fjósið er í dag. Saman við konu síni, Poulu, eru tey ein hornsteinn í okkara dagliga starvi — hjálpa til í køkinum og tryggja, at alt gongur smidliga.',
+    tordur:
+      'Tórður, sonur Eyðfinns og Poulu, er at útbúgva seg til byggimeistara. Hann hevur verið handvirkur við at gera Fjósið til veruleika og umboðar næstu kynslóð — hann sameinar gamlar siðvenjur við nýggjum hugskotum.',
+    trondur:
+      'Tróndur og Heri høvdu mjólkineyt saman í fleiri ár, men góvust í 2007. Hann koyrur nú sjúkrabil og hevur gjørt ein dreym til verðuleika við at bygt fýra smáttur her í Bø, sum hann leigar út og so rámandi nevnir Útsýnið. Men hann dugir mangt og hvat, at mála, smíða og syngja eru nøkur av evnunum.',
   },
 
   booking: {
@@ -168,6 +194,7 @@ const fo = {
     copyright: '© {{year}} Fjósið. Allir rættindi ásett.',
     navLinks: {
       home: 'Heim',
+      about: 'Um okkum',
       menu: 'Menu',
       booking: 'Bóking',
       meetings: 'Fundir',

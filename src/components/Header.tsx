@@ -7,6 +7,7 @@ import { cn } from '../lib/utils';
 
 const NAV_LINKS = [
   { key: 'nav.home',        path: '/',              external: false },
+  { key: 'nav.about',       path: '/about',         external: false },
   { key: 'nav.menu',        path: '/images/Menu.pdf', external: true },
   { key: 'nav.booking',     path: '/booking',       external: false },
   { key: 'nav.meetings',    path: '/meetings',      external: false },

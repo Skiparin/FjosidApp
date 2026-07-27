@@ -150,36 +150,34 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* ── About us ── */}
+      {/* ── About us teaser ── */}
       <Section className="py-24 bg-[#fdfcf9]">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-14">
-            <p className="text-amber-600 text-xs uppercase tracking-widest font-medium mb-3">
-              {t('home.teamTag')}
-            </p>
-            <h2 className="font-display text-4xl sm:text-5xl font-semibold text-stone-800">
-              {t('home.aboutUs')}
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { img: '/images/jenny_heri.jpg',    name: 'Jenny & Heri',    textKey: 'home.jennyHeri' },
-              { img: '/images/ellef_eystein.jpg', name: 'Eystein & Ellef', textKey: 'home.eydsteinEllef' },
-              { img: '/images/eyðfinn_poula.jpg', name: 'Eyðfinn & Poula', textKey: 'home.eydfinnPoula' },
-              { img: '/images/tórður.jpg',         name: 'Tórður',          textKey: 'home.tordur' },
-            ].map(({ img, name, textKey }) => (
-              <div key={name} className="text-center">
-                <div className="relative w-full aspect-[4/5] overflow-hidden rounded mb-4">
-                  <img
-                    src={img}
-                    alt={name}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                  />
-                </div>
-                <h3 className="font-display text-lg font-semibold text-stone-800 mb-2">{name}</h3>
-                <p className="text-stone-500 text-[13px] leading-relaxed">{t(textKey)}</p>
-              </div>
-            ))}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="grid grid-cols-2 gap-3">
+              <img src="/images/jenny_heri.jpg"    alt="Jenny & Heri"    className="w-full h-52 object-cover rounded shadow-sm" />
+              <img src="/images/eyðfinn_poula.jpg" alt="Eyðfinn & Poula" className="w-full h-52 object-cover rounded shadow-sm mt-6" />
+              <img src="/images/tórður.jpg"         alt="Tórður"          className="w-full h-52 object-cover rounded shadow-sm" />
+              <img src="/images/trondur.jpg"        alt="Tróndur"         className="w-full h-52 object-cover rounded shadow-sm mt-6" />
+            </div>
+            <div>
+              <p className="text-amber-600 text-xs uppercase tracking-widest font-medium mb-4">
+                {t('home.teamTag')}
+              </p>
+              <h2 className="font-display text-4xl sm:text-5xl font-semibold text-stone-900 mb-6 leading-snug">
+                {t('home.aboutUs')}
+              </h2>
+              <p className="text-stone-500 text-base leading-relaxed mb-8">
+                {t('home.aboutTeaser')}
+              </p>
+              <button
+                onClick={() => navigate('/about')}
+                className="inline-flex items-center gap-2 text-sm font-semibold text-amber-600 hover:text-amber-500 transition-colors group"
+              >
+                {t('home.aboutButton')}
+                <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
+              </button>
+            </div>
           </div>
         </div>
       </Section>

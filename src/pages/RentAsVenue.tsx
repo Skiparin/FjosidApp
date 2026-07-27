@@ -1,23 +1,11 @@
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Box, Button, Typography } from '@mui/material';
+import { ArrowRight, Clock, DollarSign, Star } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
-function AnimatedSection({
-  children,
-  sx,
-  className,
-}: {
-  children: React.ReactNode;
-  sx?: object;
-  className?: string;
-}) {
+function Section({ children, className = '' }: { children: React.ReactNode; className?: string }) {
   const ref = useScrollAnimation();
-  return (
-    <Box ref={ref} className={`section-to-animate${className ? ' ' + className : ''}`} sx={sx}>
-      {children}
-    </Box>
-  );
+  return <section ref={ref} className={`will-animate ${className}`}>{children}</section>;
 }
 
 export default function RentAsVenue() {
@@ -25,88 +13,105 @@ export default function RentAsVenue() {
   const navigate = useNavigate();
 
   return (
-    <Box>
+    <div>
+      {/* Page header */}
+      <div className="bg-[#111] py-20 px-6 text-center">
+        <p className="text-amber-500 text-xs uppercase tracking-widest font-medium mb-3">
+          Your celebration
+        </p>
+        <h1 className="font-display text-5xl font-semibold text-white">{t('rentAsVenue.title')}</h1>
+      </div>
+
       {/* Intro */}
-      <Box className="intro-section">
-        <Box className="intro-section__text-wrapper">
-          <Typography component="h2" className="intro-section__title">
-            {t('rentAsVenue.title')}
-          </Typography>
-          <Typography className="intro-section__text">{t('rentAsVenue.text')}</Typography>
-        </Box>
-        <Box className="intro-section__image-wrapper">
-          <Box
-            component="img"
-            src="/images/luttakarar_8.jpg"
-            alt=""
-            className="details-section__image"
-          />
-        </Box>
-      </Box>
+      <Section className="grid md:grid-cols-2">
+        <div className="flex flex-col justify-center px-10 py-16 bg-[#fdfcf9]">
+          <p className="text-stone-500 text-[15px] leading-relaxed">{t('rentAsVenue.text')}</p>
+        </div>
+        <div className="relative h-72 md:h-auto overflow-hidden">
+          <img src="/images/luttakarar_8.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        </div>
+      </Section>
 
-      {/* Details */}
-      <Box className="details-section">
-        {/* Section 1 */}
-        <Box className="details-section__text-image-section">
-          <Box className="details-section__image-wrapper">
-            <Box
-              component="img"
-              src="/images/luttakarar_9.jpg"
-              alt=""
-              className="details-section__image"
-            />
-          </Box>
-          <Box className="details-section__text-wrapper">
-            <Typography className="details-section__title">{t('rentAsVenue.title2')}</Typography>
-            <Typography className="details-section__text">{t('rentAsVenue.text2')}</Typography>
-          </Box>
-        </Box>
+      {/* Pricing cards */}
+      <Section className="bg-stone-50 py-20 px-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="text-amber-600 text-xs uppercase tracking-widest font-medium">Simple pricing</span>
+            <h2 className="font-display text-4xl font-semibold text-stone-800 mt-3">{t('rentAsVenue.title3')}</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              { label: 'Half Day', price: '3,000', unit: 'DKK', desc: 'Perfect for shorter gatherings and celebrations.' },
+              { label: 'Full Day', price: '6,000', unit: 'DKK', desc: 'Exclusive all-day access from setup to cleanup.' },
+            ].map(({ label, price, unit, desc }) => (
+              <div key={label} className="bg-white border border-stone-100 rounded p-8 text-center shadow-sm">
+                <p className="text-stone-400 text-sm uppercase tracking-widest mb-3">{label}</p>
+                <p className="font-display text-5xl font-semibold text-stone-800 mb-1">
+                  {price} <span className="text-2xl text-stone-400">{unit}</span>
+                </p>
+                <p className="text-stone-400 text-xs mb-5">VAT included</p>
+                <p className="text-stone-500 text-sm leading-relaxed">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
 
-        {/* Section 2 */}
-        <AnimatedSection sx={{ background: '#fff' }}>
-          <Box className="details-section__text-image-section-2">
-            <Box className="details-section__text-wrapper">
-              <Typography className="details-section__title">{t('rentAsVenue.title3')}</Typography>
-              <Typography className="details-section__text">{t('rentAsVenue.text3')}</Typography>
-            </Box>
-            <Box className="details-section__image-wrapper">
-              <Box
-                component="img"
-                src="/images/luttakarar_5.jpg"
-                alt=""
-                className="details-section__image"
-              />
-            </Box>
-          </Box>
-        </AnimatedSection>
+      {/* Highlights */}
+      <Section className="py-16 px-6 bg-[#fdfcf9]">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+          {[
+            { icon: Clock, title: 'Flexible Hours', desc: t('rentAsVenue.text2') },
+            { icon: Star, title: 'Unique Setting', desc: 'A carefully renovated barn with rustic charm in the heart of Bøur.' },
+            { icon: DollarSign, title: 'Transparent Pricing', desc: t('rentAsVenue.text3') },
+          ].map(({ icon: Icon, title, desc }) => (
+            <div key={title} className="flex gap-5">
+              <div className="mt-1 shrink-0 p-2.5 rounded bg-amber-50 text-amber-600">
+                <Icon size={20} />
+              </div>
+              <div>
+                <h3 className="font-semibold text-stone-800 mb-1">{title}</h3>
+                <p className="text-stone-500 text-sm leading-relaxed">{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Section>
 
-        {/* Section 3 */}
-        <AnimatedSection>
-          <Box className="details-section__text-image-section">
-            <Box className="details-section__image-wrapper">
-              <Box
-                component="img"
-                src="/images/luttakarar_6.jpg"
-                alt=""
-                className="details-section__image"
-              />
-            </Box>
-            <Box className="details-section__text-wrapper">
-              <Typography className="details-section__title">{t('rentAsVenue.title4')}</Typography>
-              <Typography className="details-section__text">{t('rentAsVenue.text4')}</Typography>
-              <Box className="details-section__button-wrapper" sx={{ mt: 2 }}>
-                <Button
-                  variant="contained"
-                  onClick={() => navigate('/booking')}
-                  sx={{ background: '#000', color: 'goldenrod', '&:hover': { background: '#222' } }}
-                >
-                  {t('rentAsVenue.bookingButton')}
-                </Button>
-              </Box>
-            </Box>
-          </Box>
-        </AnimatedSection>
-      </Box>
-    </Box>
+      {/* Sections */}
+      <Section className="grid md:grid-cols-2">
+        <div className="relative h-72 md:h-auto overflow-hidden">
+          <img src="/images/luttakarar_9.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        </div>
+        <div className="flex flex-col justify-center px-10 py-16 bg-[#fdfcf9]">
+          <span className="text-amber-600 text-xs uppercase tracking-widest font-medium mb-3">Options</span>
+          <h2 className="font-display text-3xl sm:text-4xl font-semibold text-stone-800 mb-5 leading-snug">
+            {t('rentAsVenue.title2')}
+          </h2>
+          <p className="text-stone-500 text-[15px] leading-relaxed">{t('rentAsVenue.text2')}</p>
+        </div>
+      </Section>
+
+      {/* Booking CTA */}
+      <Section className="grid md:grid-cols-2 bg-stone-50">
+        <div className="flex flex-col justify-center px-10 py-16 order-2 md:order-1">
+          <span className="text-amber-600 text-xs uppercase tracking-widest font-medium mb-3">Book now</span>
+          <h2 className="font-display text-3xl sm:text-4xl font-semibold text-stone-800 mb-5 leading-snug">
+            {t('rentAsVenue.title4')}
+          </h2>
+          <p className="text-stone-500 text-[15px] leading-relaxed mb-8">{t('rentAsVenue.text4')}</p>
+          <button
+            onClick={() => navigate('/booking')}
+            className="self-start inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-black font-semibold px-7 py-3 rounded-sm transition-colors text-sm"
+          >
+            {t('rentAsVenue.bookingButton')}
+            <ArrowRight size={16} />
+          </button>
+        </div>
+        <div className="relative h-72 md:h-auto overflow-hidden order-1 md:order-2">
+          <img src="/images/luttakarar_5.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        </div>
+      </Section>
+    </div>
   );
 }

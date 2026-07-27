@@ -1,195 +1,189 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import {
-  AppBar,
-  Box,
-  Drawer,
-  Divider,
-  IconButton,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText,
-  ToggleButton,
-  ToggleButtonGroup,
-  Toolbar,
-} from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Instagram';
+import { Menu, X } from 'lucide-react';
+import { FacebookIcon, InstagramIcon } from './SocialIcons';
+import { cn } from '../lib/utils';
 
 const NAV_LINKS = [
-  { key: 'nav.home', path: '/' },
-  { key: 'nav.menu', path: '/images/Menu.pdf', external: true },
-  { key: 'nav.booking', path: '/booking' },
-  { key: 'nav.meetings', path: '/meetings' },
-  { key: 'nav.rentAsVenue', path: '/rent-as-venue' },
+  { key: 'nav.home',        path: '/',              external: false },
+  { key: 'nav.menu',        path: '/images/Menu.pdf', external: true },
+  { key: 'nav.booking',     path: '/booking',       external: false },
+  { key: 'nav.meetings',    path: '/meetings',      external: false },
+  { key: 'nav.rentAsVenue', path: '/rent-as-venue', external: false },
 ];
 
 export default function Header() {
   const { t, i18n } = useTranslation();
   const location = useLocation();
-  const [drawerOpen, setDrawerOpen] = useState(false);
-  const lang = i18n.language;
-
-  const handleLangChange = (_: React.MouseEvent, val: string) => {
-    if (val) i18n.changeLanguage(val);
-  };
+  const [open, setOpen] = useState(false);
 
   const isActive = (path: string) =>
     path === '/' ? location.pathname === '/' : location.pathname.startsWith(path);
 
   return (
     <>
-      <AppBar
-        position="sticky"
-        sx={{ background: '#000', color: 'goldenrod', boxShadow: 'none', zIndex: 1200 }}
-      >
-        <Toolbar sx={{ justifyContent: 'space-between', px: { xs: 1, sm: 2 } }}>
+      <header className="sticky top-0 z-50 bg-[#111] border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           {/* Logo */}
-          <Box component={Link} to="/" sx={{ display: 'flex', alignItems: 'center' }}>
-            <Box
-              component="img"
+          <Link to="/" className="flex items-center shrink-0">
+            <img
               src="/images/fjosid_icon_row.png"
               alt="Fjósið"
-              sx={{ height: 48 }}
+              className="h-10 w-auto object-contain"
             />
-          </Box>
+          </Link>
 
           {/* Desktop nav */}
-          <Box
-            component="nav"
-            sx={{
-              display: { xs: 'none', md: 'flex' },
-              gap: 3,
-              alignItems: 'center',
-            }}
-          >
+          <nav className="hidden md:flex items-center gap-8">
             {NAV_LINKS.map(({ key, path, external }) =>
               external ? (
-                <Box
+                <a
                   key={key}
-                  component="a"
                   href={path}
                   target="_blank"
                   rel="noopener noreferrer"
-                  sx={{
-                    color: 'goldenrod',
-                    textDecoration: 'none',
-                    fontWeight: 500,
-                    '&:hover': { textDecoration: 'underline' },
-                  }}
+                  className="text-sm font-medium text-stone-300 hover:text-amber-400 transition-colors tracking-wide"
                 >
                   {t(key)}
-                </Box>
+                </a>
               ) : (
-                <Box
+                <Link
                   key={key}
-                  component={Link}
                   to={path}
-                  sx={{
-                    color: 'goldenrod',
-                    textDecoration: 'none',
-                    fontWeight: 500,
-                    borderBottom: isActive(path) ? '2px solid goldenrod' : '2px solid transparent',
-                    pb: '2px',
-                    '&:hover': { borderBottom: '2px solid goldenrod' },
-                  }}
+                  className={cn(
+                    'text-sm font-medium tracking-wide transition-colors',
+                    isActive(path)
+                      ? 'text-amber-400'
+                      : 'text-stone-300 hover:text-amber-400'
+                  )}
                 >
                   {t(key)}
-                </Box>
+                </Link>
               )
             )}
-          </Box>
+          </nav>
 
           {/* Right controls */}
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 1, sm: 2 } }}>
-            <Box
-              component="a"
-              href="https://www.facebook.com/profile.php?id=61551701065518"
-              target="_blank"
-              rel="noopener noreferrer"
-              sx={{ color: 'goldenrod', display: { xs: 'none', sm: 'flex' } }}
-            >
-              <FacebookIcon />
-            </Box>
-            <Box
-              component="a"
-              href="https://www.instagram.com/fjosid2023/"
-              target="_blank"
-              rel="noopener noreferrer"
-              sx={{ color: 'goldenrod', display: { xs: 'none', sm: 'flex' } }}
-            >
-              <InstagramIcon />
-            </Box>
+          <div className="flex items-center gap-4">
+            {/* Social (desktop only) */}
+            <div className="hidden sm:flex items-center gap-3">
+              <a
+                href="https://www.facebook.com/profile.php?id=61551701065518"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-stone-400 hover:text-amber-400 transition-colors"
+              >
+                <FacebookIcon size={18} />
+              </a>
+              <a
+                href="https://www.instagram.com/fjosid2023/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-stone-400 hover:text-amber-400 transition-colors"
+              >
+                <InstagramIcon size={18} />
+              </a>
+            </div>
 
-            <ToggleButtonGroup
-              value={lang}
-              exclusive
-              onChange={handleLangChange}
-              size="small"
-              sx={{
-                '& .MuiToggleButton-root': {
-                  color: 'goldenrod',
-                  borderColor: 'goldenrod',
-                  px: 1,
-                  py: 0.25,
-                  fontSize: '0.75rem',
-                },
-                '& .Mui-selected': {
-                  backgroundColor: 'goldenrod !important',
-                  color: '#000 !important',
-                },
-              }}
-            >
-              <ToggleButton value="fo">FO</ToggleButton>
-              <ToggleButton value="en">EN</ToggleButton>
-            </ToggleButtonGroup>
-
-            <IconButton
-              sx={{ color: 'goldenrod' }}
-              onClick={() => setDrawerOpen(true)}
-              aria-label="menu"
-            >
-              <MenuIcon />
-            </IconButton>
-          </Box>
-        </Toolbar>
-      </AppBar>
-
-      {/* Mobile / side drawer */}
-      <Drawer
-        anchor="right"
-        open={drawerOpen}
-        onClose={() => setDrawerOpen(false)}
-        sx={{ '& .MuiDrawer-paper': { background: '#000', minWidth: 220 } }}
-      >
-        <Box sx={{ p: 2, color: 'goldenrod', fontWeight: 700, fontSize: '1.25rem' }}>
-          Fjósið
-        </Box>
-        <Divider sx={{ borderColor: 'rgba(218,165,32,0.3)' }} />
-        <List>
-          {NAV_LINKS.map(({ key, path, external }) => (
-            <Box key={key}>
-              <ListItem disablePadding>
-                <ListItemButton
-                  component={external ? 'a' : Link}
-                  {...(external ? { href: path, target: '_blank', rel: 'noopener noreferrer' } : { to: path })}
-                  onClick={() => setDrawerOpen(false)}
-                  sx={{ color: 'goldenrod' }}
+            {/* Language toggle */}
+            <div className="flex rounded overflow-hidden border border-stone-600 text-xs">
+              {(['fo', 'en'] as const).map((lang) => (
+                <button
+                  key={lang}
+                  onClick={() => i18n.changeLanguage(lang)}
+                  className={cn(
+                    'px-2.5 py-1 font-medium uppercase tracking-wider transition-colors',
+                    i18n.language === lang
+                      ? 'bg-amber-500 text-black'
+                      : 'text-stone-300 hover:text-white'
+                  )}
                 >
-                  <ListItemText
-                    primary={t(key)}
-                    slotProps={{ primary: { sx: { color: 'goldenrod' } } }}
-                  />
-                </ListItemButton>
-              </ListItem>
-              <Divider sx={{ borderColor: 'rgba(218,165,32,0.3)' }} />
-            </Box>
-          ))}
-        </List>
-      </Drawer>
+                  {lang}
+                </button>
+              ))}
+            </div>
+
+            {/* Hamburger */}
+            <button
+              onClick={() => setOpen(true)}
+              className="text-stone-300 hover:text-white transition-colors"
+              aria-label="Open menu"
+            >
+              <Menu size={22} />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Mobile drawer overlay */}
+      {open && (
+        <div className="fixed inset-0 z-50 flex">
+          <div
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            onClick={() => setOpen(false)}
+          />
+          <div className="relative ml-auto w-72 h-full bg-[#111] flex flex-col shadow-2xl">
+            <div className="flex items-center justify-between px-6 py-5 border-b border-white/10">
+              <span className="text-amber-400 font-display font-semibold text-lg">Fjósið</span>
+              <button
+                onClick={() => setOpen(false)}
+                className="text-stone-400 hover:text-white"
+              >
+                <X size={20} />
+              </button>
+            </div>
+            <nav className="flex-1 px-4 py-6 flex flex-col gap-1">
+              {NAV_LINKS.map(({ key, path, external }) => (
+                external ? (
+                  <a
+                    key={key}
+                    href={path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setOpen(false)}
+                    className="px-4 py-3 rounded-lg text-stone-200 hover:text-amber-400 hover:bg-white/5 transition-colors text-sm font-medium"
+                  >
+                    {t(key)}
+                  </a>
+                ) : (
+                  <Link
+                    key={key}
+                    to={path}
+                    onClick={() => setOpen(false)}
+                    className={cn(
+                      'px-4 py-3 rounded-lg text-sm font-medium transition-colors',
+                      isActive(path)
+                        ? 'text-amber-400 bg-white/5'
+                        : 'text-stone-200 hover:text-amber-400 hover:bg-white/5'
+                    )}
+                  >
+                    {t(key)}
+                  </Link>
+                )
+              ))}
+            </nav>
+            <div className="px-6 py-5 border-t border-white/10 flex gap-4">
+              <a
+                href="https://www.facebook.com/profile.php?id=61551701065518"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-stone-400 hover:text-amber-400"
+              >
+                <FacebookIcon size={20} />
+              </a>
+              <a
+                href="https://www.instagram.com/fjosid2023/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-stone-400 hover:text-amber-400"
+              >
+                <InstagramIcon size={20} />
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

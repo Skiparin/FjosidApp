@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Box } from '@mui/material';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -12,9 +11,9 @@ import Admin from './pages/Admin';
 function App() {
   return (
     <BrowserRouter>
-      <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      <div className="flex flex-col min-h-screen">
         <Header />
-        <Box component="main" sx={{ flex: 1 }}>
+        <main className="flex-1">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/booking" element={<Booking />} />
@@ -23,9 +22,9 @@ function App() {
             <Route path="/rent-as-venue" element={<RentAsVenue />} />
             <Route path="/admin" element={<Admin />} />
           </Routes>
-        </Box>
+        </main>
         <Footer />
-      </Box>
+      </div>
     </BrowserRouter>
   );
 }

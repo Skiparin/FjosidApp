@@ -1,22 +1,14 @@
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Box, Button, Typography } from '@mui/material';
+import { ArrowRight, ChevronDown } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
-function AnimatedSection({
-  children,
-  sx,
-  className,
-}: {
-  children: React.ReactNode;
-  sx?: object;
-  className?: string;
-}) {
+function Section({ children, className = '' }: { children: React.ReactNode; className?: string }) {
   const ref = useScrollAnimation();
   return (
-    <Box ref={ref} className={`section-to-animate${className ? ' ' + className : ''}`} sx={sx}>
+    <section ref={ref} className={`will-animate ${className}`}>
       {children}
-    </Box>
+    </section>
   );
 }
 
@@ -25,235 +17,268 @@ export default function Home() {
   const navigate = useNavigate();
 
   return (
-    <Box>
-      {/* Hero */}
-      <Box className="intro-image-container">
-        <Box
-          component="img"
+    <div>
+      {/* ── Hero ──────────────────────────────────────────────── */}
+      <div className="relative h-[92vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+        <img
           src="/images/høli_11.jpg"
-          alt="Fjósið"
-          className="intro-image"
-          sx={{ objectPosition: '50% 79%' }}
+          alt="Fjósið interior"
+          className="absolute inset-0 w-full h-full object-cover object-[50%_79%]"
         />
-        <Box className="intro-image-text-container">
-          <Typography component="h1" className="intro-image-title">
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/60" />
+
+        <div className="relative z-10 text-center px-6 max-w-3xl">
+          <p className="text-amber-400 text-sm font-medium tracking-[0.3em] uppercase mb-4">
+            Bøur · Faroe Islands
+          </p>
+          <h1 className="text-white text-5xl sm:text-6xl md:text-7xl font-display font-semibold leading-tight mb-6">
             {t('home.imageTitle')}
-          </Typography>
-          <Typography component="h2" className="intro-image-text">
+          </h1>
+          <p className="text-stone-200 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-10">
             {t('home.imageText')}
-          </Typography>
-        </Box>
-      </Box>
-
-      {/* Details sections */}
-      <Box sx={{ mb: '6rem' }}>
-        {/* Section 1 */}
-        <Box className="details-section__text-image-section">
-          <Box className="details-section__image-wrapper">
-            <Box
-              component="img"
-              src="/images/høli_2.jpg"
-              alt=""
-              className="details-section__image"
-            />
-          </Box>
-          <Box className="details-section__text-wrapper">
-            <Typography className="details-section__title">{t('home.detailsTitle1')}</Typography>
-            <Typography className="details-section__text">{t('home.details1')}</Typography>
-            <Box className="details-section__button-wrapper" sx={{ mt: 2 }}>
-              <Button
-                variant="contained"
-                onClick={() => navigate('/booking')}
-                sx={{ background: '#000', color: 'goldenrod', '&:hover': { background: '#222' } }}
-              >
-                {t('home.bookingButton')}
-              </Button>
-            </Box>
-          </Box>
-        </Box>
-
-        {/* Section 2 */}
-        <AnimatedSection sx={{ background: '#fff' }}>
-          <Box className="details-section__text-image-section-2">
-            <Box className="details-section__text-wrapper">
-              <Typography className="details-section__title">{t('home.detailsTitle2')}</Typography>
-              <Typography className="details-section__text">{t('home.details2')}</Typography>
-              <Box className="details-section__button-wrapper" sx={{ mt: 2 }}>
-                <Button
-                  variant="contained"
-                  component="a"
-                  href="/images/Menu.pdf"
-                  target="_blank"
-                  sx={{ background: '#000', color: 'goldenrod', '&:hover': { background: '#222' } }}
-                >
-                  {t('home.menuButton')}
-                </Button>
-              </Box>
-            </Box>
-            <Box className="details-section__image-wrapper">
-              <Box
-                component="img"
-                src="/images/neyt_1.jpg"
-                alt=""
-                className="details-section__image"
-              />
-            </Box>
-          </Box>
-        </AnimatedSection>
-
-        {/* Section 3 */}
-        <AnimatedSection>
-          <Box className="details-section__text-image-section">
-            <Box className="details-section__image-wrapper">
-              <Box
-                component="img"
-                src="/images/eplir_1.jpg"
-                alt=""
-                className="details-section__image"
-              />
-            </Box>
-            <Box className="details-section__text-wrapper">
-              <Typography className="details-section__title">{t('home.detailsTitle3')}</Typography>
-              <Typography className="details-section__text">{t('home.details3')}</Typography>
-              <Box className="details-section__button-wrapper" sx={{ mt: 2 }}>
-                <Button
-                  variant="contained"
-                  onClick={() => navigate('/gallery')}
-                  sx={{ background: '#000', color: 'goldenrod', '&:hover': { background: '#222' } }}
-                >
-                  {t('home.galleryButton')}
-                </Button>
-              </Box>
-            </Box>
-          </Box>
-        </AnimatedSection>
-      </Box>
-
-      {/* Offers section */}
-      <AnimatedSection className="offers-section">
-        <Box className="offers-section-wrapper">
-          <Typography className="offers-title">{t('home.whatWeOffer')}</Typography>
-          <Box className="offers-section__contant-wrapper">
-            <Box
-              component="a"
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <button
+              onClick={() => navigate('/booking')}
+              className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-black font-semibold px-7 py-3 rounded-sm transition-colors text-sm tracking-wide"
+            >
+              {t('home.bookingButton')}
+              <ArrowRight size={16} />
+            </button>
+            <a
               href="/images/Menu.pdf"
               target="_blank"
-              sx={{ color: 'goldenrod', textDecoration: 'none' }}
+              className="inline-flex items-center gap-2 border border-white/60 hover:border-white text-white hover:bg-white/10 font-medium px-7 py-3 rounded-sm transition-colors text-sm tracking-wide"
             >
-              <Box className="offers-section__offer-section">
-                <Box
-                  component="img"
-                  src="/images/luttakarar_3_2.jpg"
-                  alt=""
-                  className="offers-section__offer-image"
-                />
-                <Typography component="h4" className="offers-section__offer-title">
-                  {t('home.dining')}
-                </Typography>
-              </Box>
-            </Box>
-            <Box
-              className="offers-section__offer-section"
-              onClick={() => navigate('/meetings')}
-              sx={{ cursor: 'pointer' }}
-            >
-              <Box
-                component="img"
-                src="/images/luttakarar_7.jpg"
-                alt=""
-                className="offers-section__offer-image"
-              />
-              <Typography component="h4" className="offers-section__offer-title">
-                {t('home.events')}
-              </Typography>
-            </Box>
-            <Box
-              className="offers-section__offer-section"
-              onClick={() => navigate('/rent-as-venue')}
-              sx={{ cursor: 'pointer' }}
-            >
-              <Box
-                component="img"
-                src="/images/matur_14.jpg"
-                alt=""
-                className="offers-section__offer-image"
-              />
-              <Typography component="h4" className="offers-section__offer-title">
-                {t('home.venue')}
-              </Typography>
-            </Box>
-          </Box>
-        </Box>
-      </AnimatedSection>
+              {t('home.menuButton')}
+            </a>
+          </div>
+        </div>
 
-      {/* About us */}
-      <AnimatedSection sx={{ display: 'grid', mb: '6rem' }}>
-        <Box sx={{ display: 'grid' }}>
-          <Typography className="about-us-title" sx={{ justifySelf: 'center' }}>
-            {t('home.aboutUs')}
-          </Typography>
-        </Box>
-        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-          <Box className="about-us-section__image-wrapper">
-            <Box className="about-us-section__two-image-wrapper">
-              <Box className="about-us-section__image-text-wrapper">
-                <Box
-                  component="img"
-                  src="/images/jenny_heri.jpg"
-                  alt="Jenny & Heri"
-                  className="about-us-section__image"
-                />
-                <Typography className="intro-section__text">{t('home.jennyHeri')}</Typography>
-              </Box>
-              <Box className="about-us-section__image-text-wrapper">
-                <Box
-                  component="img"
-                  src="/images/ellef_eystein.jpg"
-                  alt="Ellef & Eystein"
-                  className="about-us-section__image"
-                />
-                <Typography className="intro-section__text">{t('home.eydsteinEllef')}</Typography>
-              </Box>
-            </Box>
-            <Box className="about-us-section__two-image-wrapper">
-              <Box className="about-us-section__image-text-wrapper">
-                <Box
-                  component="img"
-                  src="/images/eyðfinn_poula.jpg"
-                  alt="Eyðfinn & Poula"
-                  className="about-us-section__image"
-                />
-                <Typography className="intro-section__text">{t('home.eydfinnPoula')}</Typography>
-              </Box>
-              <Box className="about-us-section__image-text-wrapper">
-                <Box
-                  component="img"
-                  src="/images/tórður.jpg"
-                  alt="Tórður"
-                  className="about-us-section__image"
-                />
-                <Typography className="intro-section__text">{t('home.tordur')}</Typography>
-              </Box>
-            </Box>
-          </Box>
-        </Box>
-      </AnimatedSection>
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 animate-bounce">
+          <ChevronDown size={28} />
+        </div>
+      </div>
 
-      {/* Map */}
-      <AnimatedSection className="map" sx={{ mb: 0 }}>
-        <Typography className="offers-title">{t('home.location')}</Typography>
-        <Box sx={{ width: '100%', maxWidth: 900, height: 450, mb: 0 }}>
+      {/* ── Details — 3 alternating sections ─────────────────── */}
+      <div>
+        {/* Section 1 — image left, text right */}
+        <Section className="grid md:grid-cols-2">
+          <div className="relative h-80 md:h-auto overflow-hidden">
+            <img
+              src="/images/høli_2.jpg"
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          </div>
+          <div className="flex flex-col justify-center px-10 py-16 bg-[#fdfcf9]">
+            <span className="text-amber-600 text-xs uppercase tracking-widest font-medium mb-3">
+              Our story
+            </span>
+            <h2 className="font-display text-3xl sm:text-4xl font-semibold text-stone-800 mb-5 leading-snug">
+              {t('home.detailsTitle1')}
+            </h2>
+            <p className="text-stone-500 text-[15px] leading-relaxed mb-8">
+              {t('home.details1')}
+            </p>
+            <button
+              onClick={() => navigate('/booking')}
+              className="self-start inline-flex items-center gap-2 text-sm font-semibold text-amber-600 hover:text-amber-500 transition-colors group"
+            >
+              {t('home.bookingButton')}
+              <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
+            </button>
+          </div>
+        </Section>
+
+        {/* Section 2 — text left, image right (warm bg) */}
+        <Section className="grid md:grid-cols-2 bg-stone-50">
+          <div className="flex flex-col justify-center px-10 py-16 order-2 md:order-1">
+            <span className="text-amber-600 text-xs uppercase tracking-widest font-medium mb-3">
+              Our kitchen
+            </span>
+            <h2 className="font-display text-3xl sm:text-4xl font-semibold text-stone-800 mb-5 leading-snug">
+              {t('home.detailsTitle2')}
+            </h2>
+            <p className="text-stone-500 text-[15px] leading-relaxed mb-8">
+              {t('home.details2')}
+            </p>
+            <a
+              href="/images/Menu.pdf"
+              target="_blank"
+              className="self-start inline-flex items-center gap-2 text-sm font-semibold text-amber-600 hover:text-amber-500 transition-colors group"
+            >
+              {t('home.menuButton')}
+              <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div>
+          <div className="relative h-80 md:h-auto overflow-hidden order-1 md:order-2">
+            <img
+              src="/images/neyt_1.jpg"
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          </div>
+        </Section>
+
+        {/* Section 3 — image left, text right */}
+        <Section className="grid md:grid-cols-2">
+          <div className="relative h-80 md:h-auto overflow-hidden">
+            <img
+              src="/images/eplir_1.jpg"
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          </div>
+          <div className="flex flex-col justify-center px-10 py-16 bg-[#fdfcf9]">
+            <span className="text-amber-600 text-xs uppercase tracking-widest font-medium mb-3">
+              Community
+            </span>
+            <h2 className="font-display text-3xl sm:text-4xl font-semibold text-stone-800 mb-5 leading-snug">
+              {t('home.detailsTitle3')}
+            </h2>
+            <p className="text-stone-500 text-[15px] leading-relaxed mb-8">
+              {t('home.details3')}
+            </p>
+            <button
+              onClick={() => navigate('/gallery')}
+              className="self-start inline-flex items-center gap-2 text-sm font-semibold text-amber-600 hover:text-amber-500 transition-colors group"
+            >
+              {t('home.galleryButton')}
+              <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
+            </button>
+          </div>
+        </Section>
+      </div>
+
+      {/* ── What we offer ─────────────────────────────────────── */}
+      <Section className="py-24 bg-[#111]">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <p className="text-amber-500 text-xs uppercase tracking-widest font-medium mb-3">
+              Experiences
+            </p>
+            <h2 className="font-display text-4xl sm:text-5xl font-semibold text-white">
+              {t('home.whatWeOffer')}
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                img: '/images/luttakarar_3_2.jpg',
+                label: t('home.dining'),
+                href: '/images/Menu.pdf',
+                external: true,
+              },
+              {
+                img: '/images/luttakarar_7.jpg',
+                label: t('home.events'),
+                to: '/meetings',
+              },
+              {
+                img: '/images/matur_14.jpg',
+                label: t('home.venue'),
+                to: '/rent-as-venue',
+              },
+            ].map(({ img, label, href, to }) => (
+              <OfferCard key={label} img={img} label={label} href={href} to={to} navigate={navigate} />
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* ── About us ──────────────────────────────────────────── */}
+      <Section className="py-24 bg-[#fdfcf9]">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <p className="text-amber-600 text-xs uppercase tracking-widest font-medium mb-3">
+              The team
+            </p>
+            <h2 className="font-display text-4xl sm:text-5xl font-semibold text-stone-800">
+              {t('home.aboutUs')}
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { img: '/images/jenny_heri.jpg', name: 'Jenny & Heri', text: t('home.jennyHeri') },
+              { img: '/images/ellef_eystein.jpg', name: 'Eystein & Ellef', text: t('home.eydsteinEllef') },
+              { img: '/images/eyðfinn_poula.jpg', name: 'Eyðfinn & Poula', text: t('home.eydfinnPoula') },
+              { img: '/images/tórður.jpg', name: 'Tórður', text: t('home.tordur') },
+            ].map(({ img, name, text }) => (
+              <div key={name} className="text-center">
+                <div className="relative w-full aspect-[4/5] overflow-hidden rounded mb-4">
+                  <img
+                    src={img}
+                    alt={name}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                </div>
+                <h3 className="font-display text-lg font-semibold text-stone-800 mb-2">{name}</h3>
+                <p className="text-stone-500 text-[13px] leading-relaxed">{text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* ── Map ───────────────────────────────────────────────── */}
+      <Section>
+        <div className="text-center py-12 px-6 bg-stone-50">
+          <p className="text-amber-600 text-xs uppercase tracking-widest font-medium mb-3">
+            Find us
+          </p>
+          <h2 className="font-display text-4xl font-semibold text-stone-800 mb-8">
+            {t('home.location')}
+          </h2>
+        </div>
+        <div className="w-full h-[450px]">
           <iframe
             title="Fjósið location"
             width="100%"
             height="100%"
-            style={{ border: 0 }}
+            style={{ border: 0, display: 'block' }}
             loading="lazy"
             allowFullScreen
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1488.4!2d-7.371621!3d62.086239!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNjLCsDA1JzEwLjUiTiA3wrAyMicxNy44Ilc!5e0!3m2!1sen!2sfo!4v1680000000000!5m2!1sen!2sfo"
           />
-        </Box>
-      </AnimatedSection>
-    </Box>
+        </div>
+      </Section>
+    </div>
   );
+}
+
+function OfferCard({
+  img,
+  label,
+  href,
+  to,
+  navigate,
+}: {
+  img: string;
+  label: string;
+  href?: string;
+  to?: string;
+  navigate: (path: string) => void;
+}) {
+  const inner = (
+    <div className="group relative overflow-hidden cursor-pointer">
+      <div className="relative h-80 overflow-hidden">
+        <img
+          src={img}
+          alt={label}
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors" />
+      </div>
+      <div className="absolute bottom-0 left-0 right-0 p-6">
+        <h3 className="font-display text-white text-xl font-semibold">{label}</h3>
+        <div className="h-0.5 bg-amber-400 w-8 mt-2 group-hover:w-full transition-all duration-500" />
+      </div>
+    </div>
+  );
+
+  if (href) return <a href={href} target="_blank" rel="noopener noreferrer">{inner}</a>;
+  return <div onClick={() => navigate(to!)}>{inner}</div>;
 }

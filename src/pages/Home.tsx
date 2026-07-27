@@ -130,7 +130,7 @@ export default function Home() {
       </Section>
 
       {/* ── What we offer ── */}
-      <Section className="py-28 bg-stone-900">
+      <Section className="py-28 bg-[#111]">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <p className="text-amber-500 text-xs uppercase tracking-widest font-medium mb-3">

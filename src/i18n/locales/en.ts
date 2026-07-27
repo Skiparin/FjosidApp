@@ -53,32 +53,19 @@ const en = {
   },
 
   booking: {
-    pageTag: 'Reserve your table',
+    pageTag: 'By appointment only',
     title: 'Booking',
-    date: 'Date',
-    datePickerPlaceholder: 'Select a date',
-    numberOfGuests: 'Number of guests',
-    guestsPlaceholder: 'Select guests',
-    firstName: 'First name',
-    lastName: 'Last name',
-    email: 'Email',
-    phone: 'Phone number',
-    message: 'Message',
-    messagePlaceholder: 'Optional message or special requests…',
-    reserve: 'Reserve Booking',
-
-    successTitle: 'Reservation Sent',
-    success: 'Thanks for your reservation. We will contact you as soon as possible.',
-
-    firstNameRequired: 'First name is required',
-    lastNameRequired: 'Last name is required',
-    emailRequired: 'Email is required',
-    emailInvalid: 'The email address is invalid',
-    phoneRequired: 'Phone number is required',
-    phoneInvalid: 'The phone number is invalid',
-    guestsRequired: 'Number of guests is required',
-    guestsTooFew: 'Number of guests must be 8 or higher',
-    guestsTooMany: 'Number of guests must be 40 or lower',
+    sectionTag: 'Make a reservation',
+    heading: 'Reserve Fjósið for your event',
+    intro: 'Fjósið is an exclusive venue available by appointment only. Whether you are planning a private dinner, a corporate event, or a special celebration, we would love to host you. To make a booking, simply send us an email and we will get back to you as soon as possible.',
+    infoGuests: 'A minimum of 10 guests applies — if your group is smaller, the minimum charge for 10 guests still applies. Maximum capacity is 49 guests.',
+    infoAppointment: 'The restaurant and venue are open by appointment only. We are not a walk-in restaurant.',
+    infoDescription: 'Please describe your occasion and what you would like to use the venue for — this helps us prepare and tailor the experience for your group.',
+    ctaLabel: 'Send your enquiry to',
+    ctaNote: 'We will respond as soon as possible to confirm availability and discuss the details of your visit.',
+    imageAlt: 'Inside Fjósið restaurant',
+    badgeGuests: '10 – 49 guests',
+    badgeSub: 'Minimum booking',
   },
 
   gallery: {
@@ -163,17 +150,6 @@ const en = {
     title4: 'Booking and Inquiries',
     text4: "Ready to book your event at Fjósið? We make the process simple and stress-free. Use the button below to go to the bookings page and send a reservation. Whether you have questions about availability, amenities, or special requests, we're here to assist you every step of the way. Contact us today to start planning your next unforgettable event at Fjósið!",
     bookingButton: 'Booking',
-  },
-
-  admin: {
-    pageTitle: 'Admin',
-    title: 'Admin',
-    addDate: 'Add Date',
-    datesTitle: 'Blocked dates',
-    datesSubtitle: 'These dates are hidden from the booking calendar.',
-    search: 'Search',
-    date: 'Date',
-    noDates: 'No blocked dates',
   },
 
   footer: {

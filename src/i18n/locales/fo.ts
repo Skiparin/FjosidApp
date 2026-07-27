@@ -53,32 +53,19 @@ const fo = {
   },
 
   booking: {
-    pageTag: 'Bílegg borðið títt',
+    pageTag: 'Einans við avtalu',
     title: 'Bóking',
-    date: 'Dato',
-    datePickerPlaceholder: 'Vel eina dato',
-    numberOfGuests: 'Tal av gestum',
-    guestsPlaceholder: 'Vel gestir',
-    firstName: 'Fornavn',
-    lastName: 'Eftirnavn',
-    email: 'Teldupostur',
-    phone: 'Telefonnummar',
-    message: 'Boð',
-    messagePlaceholder: 'Valfrítt boð ella serstøk ynskir…',
-    reserve: 'Send bílegging',
-
-    successTitle: 'Bílegging send',
-    success: 'Takk fyri tína bílegging. Vit koma at seta okkum í samband við teg so skjótt sum møguligt.',
-
-    firstNameRequired: 'Fornavn er kravt',
-    lastNameRequired: 'Eftirnavn er kravt',
-    emailRequired: 'Teldupostur er kravt',
-    emailInvalid: 'Telduposturin er ógildugur',
-    phoneRequired: 'Telefonnummar er kravt',
-    phoneInvalid: 'Telefonnummari er ógildugur',
-    guestsRequired: 'Tal av gestum er kravt',
-    guestsTooFew: 'Tal av gestum má vera 8 ella fleiri',
-    guestsTooMany: 'Tal av gestum má vera 40 ella færri',
+    sectionTag: 'Ger eina bílegging',
+    heading: 'Bílegg Fjósið til títt tiltak',
+    intro: 'Fjósið er eitt einastandandi tilfarisstaður, sum bert er opið við avtalu. Hvørt ið tú ert at planleggja privatan kvøldsmat, eitt fyritøkuevni ella eina serliga hátíð, taka vit fegin ímóti tær. Fyri at gera eina bílegging, send okkum ein teldupost og vit svara so skjótt sum møguligt.',
+    infoGuests: 'Lágmarktal av gestum er 10 — um bólkurin er minni, er lágmarksgjaldið fyri 10 gests bert. Hámark er 49 gestir.',
+    infoAppointment: 'Staturin er einans opinn við avtalu. Vit eru ikki ein innlopsstaður.',
+    infoDescription: 'Lýs gjarna títt tiltak og hvat tú ynskir at nýta staðin til — hetta hjálpir okkum at undirbúgva og tilpassa upplivingina fyri tína bólk.',
+    ctaLabel: 'Send tínar fyrispurningar til',
+    ctaNote: 'Vit svara so skjótt sum møguligt fyri at staðfesta tøkumøguleika og fara í tøkur um nærri atlit.',
+    imageAlt: 'Inni í Fjósið stovnum',
+    badgeGuests: '10 – 49 gestir',
+    badgeSub: 'Lágmark bílegging',
   },
 
   gallery: {
@@ -163,17 +150,6 @@ const fo = {
     title4: 'Bílegging og fyrispurningar',
     text4: 'Klár/ur at bóka eitt tiltak í Fjósinum? Vit gera tilgongdina einfalda. Trýst á knøttin niðanfyri, so ferst tú til bíleggingarsíðuna, har tú kanst senda eina bílegging. Um tú hevur spurningar um hentleikar ella serlig ynskir, so eru vit her til at hjálpa tær. Set teg í samband við okkum í dag!',
     bookingButton: 'Bóking',
-  },
-
-  admin: {
-    pageTitle: 'Admin',
-    title: 'Admin',
-    addDate: 'Legg dato afturat',
-    datesTitle: 'Stingraðar datoar',
-    datesSubtitle: 'Hesar datoar eru feldar úr bíleggingardagvalinum.',
-    search: 'Leita',
-    date: 'Dato',
-    noDates: 'Ongar stingraðar datoar',
   },
 
   footer: {

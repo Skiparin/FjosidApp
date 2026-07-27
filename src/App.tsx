@@ -6,7 +6,6 @@ import Booking from './pages/Booking';
 import Gallery from './pages/Gallery';
 import Meetings from './pages/Meetings';
 import RentAsVenue from './pages/RentAsVenue';
-import Admin from './pages/Admin';
 
 function App() {
   return (
@@ -20,7 +19,6 @@ function App() {
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/meetings" element={<Meetings />} />
             <Route path="/rent-as-venue" element={<RentAsVenue />} />
-            <Route path="/admin" element={<Admin />} />
           </Routes>
         </main>
         <Footer />

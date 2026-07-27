@@ -40,7 +40,7 @@ const en = {
 
     teamTag: 'The team',
     aboutUs: 'About us',
-    aboutTeaser: 'Behind Fjósið is a close group of people who share a love of good food, craftsmanship and the Faroese landscape. From the founder who built the barn in 1978 to the team keeping it alive today.',
+    aboutTeaser: 'Behind Fjósið is a close group of people who share a love of good food, craftsmanship and the Faroese landscape.',
     aboutButton: 'Meet the team',
 
     mapTag: 'Find us',

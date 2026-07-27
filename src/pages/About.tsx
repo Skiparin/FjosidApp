@@ -38,50 +38,7 @@ export default function About() {
         </div>
       </div>
 
-      {/* ── History: Jóan Hendrik ── */}
-      <Section className="py-24 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <p className="text-amber-600 text-xs uppercase tracking-widest font-medium mb-3">
-              {t('about.historyTag')}
-            </p>
-            <h2 className="font-display text-4xl sm:text-5xl font-semibold text-stone-900">
-              {t('about.historyTitle')}
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="relative">
-              <img
-                src="/images/joan_hendrik.jpg"
-                alt="Jóan Hendrik Guttesen"
-                className="w-full h-[500px] object-cover rounded shadow-md"
-              />
-              <div className="absolute -bottom-5 -left-5 bg-[#111] text-white px-5 py-4 shadow-lg rounded hidden md:block">
-                <p className="font-display text-base font-semibold leading-none">1976</p>
-                <p className="text-xs text-stone-400 mt-1">{t('about.joanBadge')}</p>
-              </div>
-            </div>
-            <div>
-              <h3 className="font-display text-3xl font-semibold text-stone-900 mb-2">
-                Jóan Hendrik Guttesen
-              </h3>
-              <p className="text-amber-600 text-sm font-medium mb-6">{t('about.joanRole')}</p>
-              <p className="text-stone-500 text-base leading-relaxed mb-5">{t('about.joanText1')}</p>
-              <p className="text-stone-500 text-base leading-relaxed">{t('about.joanText2')}</p>
-            </div>
-          </div>
-        </div>
-      </Section>
-
-      {/* ── Divider ── */}
-      <div className="bg-[#111] py-16 px-6 text-center">
-        <p className="text-stone-400 text-sm max-w-2xl mx-auto leading-relaxed italic font-display text-lg">
-          "{t('about.quote')}"
-        </p>
-      </div>
-
-      {/* ── Owners ── */}
+      {/* ── Owners (prominent) ── */}
       <Section className="py-24 bg-[#fdfcf9]">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -105,6 +62,30 @@ export default function About() {
             {OWNERS.slice(3).map(({ img, name, textKey }) => (
               <PersonCard key={name} img={img} name={name} text={t(textKey)} />
             ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* ── History: Jóan Hendrik (compact) ── */}
+      <Section className="py-16 bg-stone-100 border-t border-stone-200">
+        <div className="max-w-4xl mx-auto px-6">
+          <p className="text-amber-600 text-xs uppercase tracking-widest font-medium mb-6 text-center">
+            {t('about.historyTag')}
+          </p>
+          <div className="flex flex-col sm:flex-row gap-8 items-center">
+            <img
+              src="/images/joan_hendrik.jpg"
+              alt="Jóan Hendrik Guttesen"
+              className="w-full sm:w-48 h-56 sm:h-56 object-cover rounded shadow-sm shrink-0"
+            />
+            <div>
+              <h3 className="font-display text-xl font-semibold text-stone-900 mb-1">
+                Jóan Hendrik Guttesen
+              </h3>
+              <p className="text-amber-600 text-xs font-medium mb-3">{t('about.joanRole')} · 1976</p>
+              <p className="text-stone-500 text-sm leading-relaxed">{t('about.joanText1')}</p>
+              <p className="text-stone-400 text-sm leading-relaxed mt-2">{t('about.joanText2')}</p>
+            </div>
           </div>
         </div>
       </Section>

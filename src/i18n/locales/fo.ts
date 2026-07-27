@@ -40,7 +40,7 @@ const fo = {
 
     teamTag: 'Fólkið',
     aboutUs: 'Um okkum',
-    aboutTeaser: 'Aftanfyri Fjósið er ein náin bólkur av fólki, sum deila kærleika til góðan mat, handverk og føroyskt landslag. Frá stiftaranum, sum bygdi fjósið í 1978, til lið dagsins í dag.',
+    aboutTeaser: 'Aftanfyri Fjósið er ein náin bólkur av fólki, sum deila kærleika til góðan mat, handverk og føroyskt landslag.',
     aboutButton: 'Møt liðið',
 
     mapTag: 'Finn okkum',

@@ -129,8 +129,8 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* ── What we offer ── warm dark, amber top rule ── */}
-      <Section className="py-28 bg-stone-900 border-t-2 border-amber-500">
+      {/* ── What we offer ── */}
+      <Section className="py-28 bg-stone-900">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <p className="text-amber-500 text-xs uppercase tracking-widest font-medium mb-3">
@@ -183,23 +183,13 @@ export default function Home() {
 
       {/* ── Map — satellite view ── */}
       <Section className="border-t border-stone-200">
-        <div className="flex items-center justify-between px-8 sm:px-14 py-8 bg-stone-50">
-          <div>
-            <p className="text-amber-600 text-xs uppercase tracking-widest font-medium mb-1">
-              {t('home.mapTag')}
-            </p>
-            <h2 className="font-display text-2xl font-semibold text-stone-800">
-              {t('home.location')}
-            </h2>
-          </div>
-          <a
-            href="https://maps.google.com/?q=62.086239,-7.371621"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-medium text-amber-600 hover:text-amber-500 transition-colors inline-flex items-center gap-1"
-          >
-            Google Maps <ArrowRight size={14} />
-          </a>
+        <div className="text-center py-10 px-6 bg-stone-50">
+          <p className="text-amber-600 text-xs uppercase tracking-widest font-medium mb-2">
+            {t('home.mapTag')}
+          </p>
+          <h2 className="font-display text-3xl font-semibold text-stone-800">
+            {t('home.location')}
+          </h2>
         </div>
         <div className="w-full h-[480px]">
           <iframe

@@ -9,7 +9,7 @@ import { format, startOfToday } from 'date-fns';
 import { CalendarDays, Users, ChevronDown, CheckCircle2 } from 'lucide-react';
 import { cn } from '../lib/utils';
 
-const GUESTS = Array.from({ length: 33 }, (_, i) => `${i + 8} Guests`);
+const GUESTS = Array.from({ length: 33 }, (_, i) => `${i + 8}`);
 const STORAGE_KEY = 'fjosid_blocked_dates';
 
 function loadBlockedDates(): Date[] {
@@ -46,7 +46,6 @@ export default function Booking() {
     mode: 'onChange',
   });
 
-
   const onSubmit = (data: FormValues) => {
     console.log('Booking submitted:', data);
     // TODO: integrate email service (e.g. EmailJS or backend endpoint)
@@ -61,7 +60,7 @@ export default function Booking() {
         <div className="text-center max-w-md">
           <CheckCircle2 size={56} className="text-green-500 mx-auto mb-5" />
           <h2 className="font-display text-3xl font-semibold text-stone-800 mb-3">
-            Reservation Sent
+            {t('booking.successTitle')}
           </h2>
           <p className="text-stone-500 leading-relaxed">{t('booking.success')}</p>
         </div>
@@ -71,20 +70,17 @@ export default function Booking() {
 
   return (
     <div className="min-h-screen bg-stone-50">
-      {/* Page header */}
       <div className="bg-[#111] py-20 px-6 text-center">
         <p className="text-amber-500 text-xs uppercase tracking-widest font-medium mb-3">
-          Reserve your table
+          {t('booking.pageTag')}
         </p>
         <h1 className="font-display text-5xl font-semibold text-white">{t('booking.title')}</h1>
       </div>
 
-      {/* Form */}
       <div className="max-w-2xl mx-auto px-6 py-16">
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-          {/* Date + Guests row */}
+          {/* Date + Guests */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {/* Date picker */}
             <div>
               <label className="block text-xs font-semibold uppercase tracking-wider text-stone-500 mb-2">
                 {t('booking.date')}
@@ -99,14 +95,12 @@ export default function Booking() {
                       onClick={() => setCalendarOpen((o) => !o)}
                       className={cn(
                         'w-full flex items-center gap-3 border rounded-sm px-4 py-3 text-sm text-left transition-colors',
-                        errors.date
-                          ? 'border-red-400 bg-red-50'
-                          : 'border-stone-200 bg-white hover:border-stone-400'
+                        errors.date ? 'border-red-400 bg-red-50' : 'border-stone-200 bg-white hover:border-stone-400'
                       )}
                     >
                       <CalendarDays size={16} className="text-amber-500 shrink-0" />
                       <span className={field.value ? 'text-stone-800' : 'text-stone-400'}>
-                        {field.value ? format(field.value, 'dd MMM yyyy') : 'Select a date'}
+                        {field.value ? format(field.value, 'dd MMM yyyy') : t('booking.datePickerPlaceholder')}
                       </span>
                     </button>
                     {calendarOpen && (
@@ -114,10 +108,7 @@ export default function Booking() {
                         <DayPicker
                           mode="single"
                           selected={field.value}
-                          onSelect={(d) => {
-                            field.onChange(d);
-                            setCalendarOpen(false);
-                          }}
+                          onSelect={(d) => { field.onChange(d); setCalendarOpen(false); }}
                           disabled={[{ before: startOfToday() }, ...blockedDates]}
                           classNames={{
                             selected: '!bg-amber-500 !text-black !rounded',
@@ -126,15 +117,12 @@ export default function Booking() {
                         />
                       </div>
                     )}
-                    {errors.date && (
-                      <p className="mt-1 text-xs text-red-500">{String(errors.date.message)}</p>
-                    )}
+                    {errors.date && <p className="mt-1 text-xs text-red-500">{String(errors.date.message)}</p>}
                   </div>
                 )}
               />
             </div>
 
-            {/* Guests */}
             <div>
               <label className="block text-xs font-semibold uppercase tracking-wider text-stone-500 mb-2">
                 {t('booking.numberOfGuests')}
@@ -153,31 +141,29 @@ export default function Booking() {
                         !field.value && 'text-stone-400'
                       )}
                     >
-                      <option value="" disabled>Select guests</option>
+                      <option value="" disabled>{t('booking.guestsPlaceholder')}</option>
                       {GUESTS.map((g) => (
-                        <option key={g} value={g}>{g}</option>
+                        <option key={g} value={g}>{g} {t('booking.numberOfGuests')}</option>
                       ))}
                     </select>
                     <ChevronDown size={14} className="absolute right-4 top-1/2 -translate-y-1/2 text-stone-400 pointer-events-none" />
-                    {errors.guests && (
-                      <p className="mt-1 text-xs text-red-500">{errors.guests.message}</p>
-                    )}
+                    {errors.guests && <p className="mt-1 text-xs text-red-500">{errors.guests.message}</p>}
                   </div>
                 )}
               />
             </div>
           </div>
 
-          {/* Name row */}
+          {/* Name */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <Field name="firstName" label={t('booking.firstName')} control={control} errors={errors} />
-            <Field name="lastName" label={t('booking.lastName')} control={control} errors={errors} />
+            <Field name="lastName"  label={t('booking.lastName')}  control={control} errors={errors} />
           </div>
 
-          {/* Contact row */}
+          {/* Contact */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <Field name="email" label={t('booking.email')} type="email" control={control} errors={errors} />
-            <Field name="phone" label={t('booking.phone')} type="tel" control={control} errors={errors} />
+            <Field name="phone" label={t('booking.phone')} type="tel"   control={control} errors={errors} />
           </div>
 
           {/* Message */}
@@ -192,14 +178,13 @@ export default function Booking() {
                 <textarea
                   {...field}
                   rows={5}
-                  placeholder="Optional message or special requests..."
+                  placeholder={t('booking.messagePlaceholder')}
                   className="w-full border border-stone-200 hover:border-stone-400 focus:border-amber-400 focus:outline-none rounded-sm px-4 py-3 text-sm resize-none transition-colors bg-white"
                 />
               )}
             />
           </div>
 
-          {/* Submit */}
           <button
             type="submit"
             disabled={!isValid}
@@ -213,24 +198,12 @@ export default function Booking() {
   );
 }
 
-function Field({
-  name,
-  label,
-  type = 'text',
-  control,
-  errors,
-}: {
-  name: string;
-  label: string;
-  type?: string;
-  control: any;
-  errors: any;
+function Field({ name, label, type = 'text', control, errors }: {
+  name: string; label: string; type?: string; control: any; errors: any;
 }) {
   return (
     <div>
-      <label className="block text-xs font-semibold uppercase tracking-wider text-stone-500 mb-2">
-        {label}
-      </label>
+      <label className="block text-xs font-semibold uppercase tracking-wider text-stone-500 mb-2">{label}</label>
       <Controller
         name={name as any}
         control={control}
@@ -244,9 +217,7 @@ function Field({
                 errors[name] ? 'border-red-400 bg-red-50' : 'border-stone-200 hover:border-stone-400'
               )}
             />
-            {errors[name] && (
-              <p className="mt-1 text-xs text-red-500">{errors[name]?.message}</p>
-            )}
+            {errors[name] && <p className="mt-1 text-xs text-red-500">{errors[name]?.message}</p>}
           </>
         )}
       />

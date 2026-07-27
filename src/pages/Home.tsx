@@ -18,19 +18,17 @@ export default function Home() {
 
   return (
     <div>
-      {/* ── Hero ──────────────────────────────────────────────── */}
+      {/* ── Hero ── */}
       <div className="relative h-[92vh] min-h-[600px] flex items-center justify-center overflow-hidden">
         <img
           src="/images/høli_11.jpg"
-          alt="Fjósið interior"
+          alt={t('home.imageTitle')}
           className="absolute inset-0 w-full h-full object-cover object-[50%_79%]"
         />
-        {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/60" />
-
         <div className="relative z-10 text-center px-6 max-w-3xl">
           <p className="text-amber-400 text-sm font-medium tracking-[0.3em] uppercase mb-4">
-            Bøur · Faroe Islands
+            {t('home.location_tag')}
           </p>
           <h1 className="text-white text-5xl sm:text-6xl md:text-7xl font-display font-semibold leading-tight mb-6">
             {t('home.imageTitle')}
@@ -55,34 +53,26 @@ export default function Home() {
             </a>
           </div>
         </div>
-
-        {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 animate-bounce">
           <ChevronDown size={28} />
         </div>
       </div>
 
-      {/* ── Details — 3 alternating sections ─────────────────── */}
+      {/* ── Detail sections ── */}
       <div>
-        {/* Section 1 — image left, text right */}
+        {/* Section 1 */}
         <Section className="grid md:grid-cols-2">
           <div className="relative h-80 md:h-auto overflow-hidden">
-            <img
-              src="/images/høli_2.jpg"
-              alt=""
-              className="absolute inset-0 w-full h-full object-cover"
-            />
+            <img src="/images/høli_2.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />
           </div>
           <div className="flex flex-col justify-center px-10 py-16 bg-[#fdfcf9]">
             <span className="text-amber-600 text-xs uppercase tracking-widest font-medium mb-3">
-              Our story
+              {t('home.section1_tag')}
             </span>
             <h2 className="font-display text-3xl sm:text-4xl font-semibold text-stone-800 mb-5 leading-snug">
               {t('home.detailsTitle1')}
             </h2>
-            <p className="text-stone-500 text-[15px] leading-relaxed mb-8">
-              {t('home.details1')}
-            </p>
+            <p className="text-stone-500 text-[15px] leading-relaxed mb-8">{t('home.details1')}</p>
             <button
               onClick={() => navigate('/booking')}
               className="self-start inline-flex items-center gap-2 text-sm font-semibold text-amber-600 hover:text-amber-500 transition-colors group"
@@ -93,18 +83,16 @@ export default function Home() {
           </div>
         </Section>
 
-        {/* Section 2 — text left, image right (warm bg) */}
+        {/* Section 2 */}
         <Section className="grid md:grid-cols-2 bg-stone-50">
           <div className="flex flex-col justify-center px-10 py-16 order-2 md:order-1">
             <span className="text-amber-600 text-xs uppercase tracking-widest font-medium mb-3">
-              Our kitchen
+              {t('home.section2_tag')}
             </span>
             <h2 className="font-display text-3xl sm:text-4xl font-semibold text-stone-800 mb-5 leading-snug">
               {t('home.detailsTitle2')}
             </h2>
-            <p className="text-stone-500 text-[15px] leading-relaxed mb-8">
-              {t('home.details2')}
-            </p>
+            <p className="text-stone-500 text-[15px] leading-relaxed mb-8">{t('home.details2')}</p>
             <a
               href="/images/Menu.pdf"
               target="_blank"
@@ -115,33 +103,23 @@ export default function Home() {
             </a>
           </div>
           <div className="relative h-80 md:h-auto overflow-hidden order-1 md:order-2">
-            <img
-              src="/images/neyt_1.jpg"
-              alt=""
-              className="absolute inset-0 w-full h-full object-cover"
-            />
+            <img src="/images/neyt_1.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />
           </div>
         </Section>
 
-        {/* Section 3 — image left, text right */}
+        {/* Section 3 */}
         <Section className="grid md:grid-cols-2">
           <div className="relative h-80 md:h-auto overflow-hidden">
-            <img
-              src="/images/eplir_1.jpg"
-              alt=""
-              className="absolute inset-0 w-full h-full object-cover"
-            />
+            <img src="/images/eplir_1.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />
           </div>
           <div className="flex flex-col justify-center px-10 py-16 bg-[#fdfcf9]">
             <span className="text-amber-600 text-xs uppercase tracking-widest font-medium mb-3">
-              Community
+              {t('home.section3_tag')}
             </span>
             <h2 className="font-display text-3xl sm:text-4xl font-semibold text-stone-800 mb-5 leading-snug">
               {t('home.detailsTitle3')}
             </h2>
-            <p className="text-stone-500 text-[15px] leading-relaxed mb-8">
-              {t('home.details3')}
-            </p>
+            <p className="text-stone-500 text-[15px] leading-relaxed mb-8">{t('home.details3')}</p>
             <button
               onClick={() => navigate('/gallery')}
               className="self-start inline-flex items-center gap-2 text-sm font-semibold text-amber-600 hover:text-amber-500 transition-colors group"
@@ -153,48 +131,31 @@ export default function Home() {
         </Section>
       </div>
 
-      {/* ── What we offer ─────────────────────────────────────── */}
+      {/* ── What we offer ── */}
       <Section className="py-24 bg-[#111]">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-14">
             <p className="text-amber-500 text-xs uppercase tracking-widest font-medium mb-3">
-              Experiences
+              {t('home.offersTag')}
             </p>
             <h2 className="font-display text-4xl sm:text-5xl font-semibold text-white">
               {t('home.whatWeOffer')}
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                img: '/images/luttakarar_3_2.jpg',
-                label: t('home.dining'),
-                href: '/images/Menu.pdf',
-                external: true,
-              },
-              {
-                img: '/images/luttakarar_7.jpg',
-                label: t('home.events'),
-                to: '/meetings',
-              },
-              {
-                img: '/images/matur_14.jpg',
-                label: t('home.venue'),
-                to: '/rent-as-venue',
-              },
-            ].map(({ img, label, href, to }) => (
-              <OfferCard key={label} img={img} label={label} href={href} to={to} navigate={navigate} />
-            ))}
+            <OfferCard img="/images/luttakarar_3_2.jpg" label={t('home.dining')}  href="/images/Menu.pdf" navigate={navigate} />
+            <OfferCard img="/images/luttakarar_7.jpg"   label={t('home.events')}  to="/meetings"        navigate={navigate} />
+            <OfferCard img="/images/matur_14.jpg"        label={t('home.venue')}   to="/rent-as-venue"   navigate={navigate} />
           </div>
         </div>
       </Section>
 
-      {/* ── About us ──────────────────────────────────────────── */}
+      {/* ── About us ── */}
       <Section className="py-24 bg-[#fdfcf9]">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-14">
             <p className="text-amber-600 text-xs uppercase tracking-widest font-medium mb-3">
-              The team
+              {t('home.teamTag')}
             </p>
             <h2 className="font-display text-4xl sm:text-5xl font-semibold text-stone-800">
               {t('home.aboutUs')}
@@ -202,11 +163,11 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { img: '/images/jenny_heri.jpg', name: 'Jenny & Heri', text: t('home.jennyHeri') },
-              { img: '/images/ellef_eystein.jpg', name: 'Eystein & Ellef', text: t('home.eydsteinEllef') },
-              { img: '/images/eyðfinn_poula.jpg', name: 'Eyðfinn & Poula', text: t('home.eydfinnPoula') },
-              { img: '/images/tórður.jpg', name: 'Tórður', text: t('home.tordur') },
-            ].map(({ img, name, text }) => (
+              { img: '/images/jenny_heri.jpg',    name: 'Jenny & Heri',    textKey: 'home.jennyHeri' },
+              { img: '/images/ellef_eystein.jpg', name: 'Eystein & Ellef', textKey: 'home.eydsteinEllef' },
+              { img: '/images/eyðfinn_poula.jpg', name: 'Eyðfinn & Poula', textKey: 'home.eydfinnPoula' },
+              { img: '/images/tórður.jpg',         name: 'Tórður',          textKey: 'home.tordur' },
+            ].map(({ img, name, textKey }) => (
               <div key={name} className="text-center">
                 <div className="relative w-full aspect-[4/5] overflow-hidden rounded mb-4">
                   <img
@@ -216,18 +177,18 @@ export default function Home() {
                   />
                 </div>
                 <h3 className="font-display text-lg font-semibold text-stone-800 mb-2">{name}</h3>
-                <p className="text-stone-500 text-[13px] leading-relaxed">{text}</p>
+                <p className="text-stone-500 text-[13px] leading-relaxed">{t(textKey)}</p>
               </div>
             ))}
           </div>
         </div>
       </Section>
 
-      {/* ── Map ───────────────────────────────────────────────── */}
+      {/* ── Map ── */}
       <Section>
         <div className="text-center py-12 px-6 bg-stone-50">
           <p className="text-amber-600 text-xs uppercase tracking-widest font-medium mb-3">
-            Find us
+            {t('home.mapTag')}
           </p>
           <h2 className="font-display text-4xl font-semibold text-stone-800 mb-8">
             {t('home.location')}
@@ -235,7 +196,7 @@ export default function Home() {
         </div>
         <div className="w-full h-[450px]">
           <iframe
-            title="Fjósið location"
+            title={t('home.location')}
             width="100%"
             height="100%"
             style={{ border: 0, display: 'block' }}
@@ -250,26 +211,15 @@ export default function Home() {
 }
 
 function OfferCard({
-  img,
-  label,
-  href,
-  to,
-  navigate,
+  img, label, href, to, navigate,
 }: {
-  img: string;
-  label: string;
-  href?: string;
-  to?: string;
+  img: string; label: string; href?: string; to?: string;
   navigate: (path: string) => void;
 }) {
   const inner = (
     <div className="group relative overflow-hidden cursor-pointer">
       <div className="relative h-80 overflow-hidden">
-        <img
-          src={img}
-          alt={label}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-        />
+        <img src={img} alt={label} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
         <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors" />
       </div>
       <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -278,7 +228,6 @@ function OfferCard({
       </div>
     </div>
   );
-
   if (href) return <a href={href} target="_blank" rel="noopener noreferrer">{inner}</a>;
   return <div onClick={() => navigate(to!)}>{inner}</div>;
 }

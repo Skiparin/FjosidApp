@@ -12,12 +12,34 @@ export default function RentAsVenue() {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
+  const highlights = [
+    { icon: Clock,        titleKey: 'rentAsVenue.highlight1_title', descKey: null },
+    { icon: Star,         titleKey: 'rentAsVenue.highlight2_title', descKey: 'rentAsVenue.highlight2_desc' },
+    { icon: DollarSign,   titleKey: 'rentAsVenue.highlight3_title', descKey: null },
+  ];
+
+  const pricingOptions = [
+    {
+      labelKey: 'rentAsVenue.halfDayLabel',
+      priceKey: 'rentAsVenue.halfDayPrice',
+      unitKey:  'rentAsVenue.halfDayUnit',
+      vatKey:   'rentAsVenue.halfDayVat',
+      descKey:  'rentAsVenue.halfDayDesc',
+    },
+    {
+      labelKey: 'rentAsVenue.fullDayLabel',
+      priceKey: 'rentAsVenue.fullDayPrice',
+      unitKey:  'rentAsVenue.fullDayUnit',
+      vatKey:   'rentAsVenue.fullDayVat',
+      descKey:  'rentAsVenue.fullDayDesc',
+    },
+  ];
+
   return (
     <div>
-      {/* Page header */}
       <div className="bg-[#111] py-20 px-6 text-center">
         <p className="text-amber-500 text-xs uppercase tracking-widest font-medium mb-3">
-          Your celebration
+          {t('rentAsVenue.pageTag')}
         </p>
         <h1 className="font-display text-5xl font-semibold text-white">{t('rentAsVenue.title')}</h1>
       </div>
@@ -32,25 +54,27 @@ export default function RentAsVenue() {
         </div>
       </Section>
 
-      {/* Pricing cards */}
+      {/* Pricing */}
       <Section className="bg-stone-50 py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <span className="text-amber-600 text-xs uppercase tracking-widest font-medium">Simple pricing</span>
-            <h2 className="font-display text-4xl font-semibold text-stone-800 mt-3">{t('rentAsVenue.title3')}</h2>
+            <span className="text-amber-600 text-xs uppercase tracking-widest font-medium">
+              {t('rentAsVenue.pricingTag')}
+            </span>
+            <h2 className="font-display text-4xl font-semibold text-stone-800 mt-3">
+              {t('rentAsVenue.title3')}
+            </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              { label: 'Half Day', price: '3,000', unit: 'DKK', desc: 'Perfect for shorter gatherings and celebrations.' },
-              { label: 'Full Day', price: '6,000', unit: 'DKK', desc: 'Exclusive all-day access from setup to cleanup.' },
-            ].map(({ label, price, unit, desc }) => (
-              <div key={label} className="bg-white border border-stone-100 rounded p-8 text-center shadow-sm">
-                <p className="text-stone-400 text-sm uppercase tracking-widest mb-3">{label}</p>
+            {pricingOptions.map(({ labelKey, priceKey, unitKey, vatKey, descKey }) => (
+              <div key={labelKey} className="bg-white border border-stone-100 rounded p-8 text-center shadow-sm">
+                <p className="text-stone-400 text-sm uppercase tracking-widest mb-3">{t(labelKey)}</p>
                 <p className="font-display text-5xl font-semibold text-stone-800 mb-1">
-                  {price} <span className="text-2xl text-stone-400">{unit}</span>
+                  {t(priceKey)}{' '}
+                  <span className="text-2xl text-stone-400">{t(unitKey)}</span>
                 </p>
-                <p className="text-stone-400 text-xs mb-5">VAT included</p>
-                <p className="text-stone-500 text-sm leading-relaxed">{desc}</p>
+                <p className="text-stone-400 text-xs mb-5">{t(vatKey)}</p>
+                <p className="text-stone-500 text-sm leading-relaxed">{t(descKey)}</p>
               </div>
             ))}
           </div>
@@ -60,31 +84,31 @@ export default function RentAsVenue() {
       {/* Highlights */}
       <Section className="py-16 px-6 bg-[#fdfcf9]">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
-          {[
-            { icon: Clock, title: 'Flexible Hours', desc: t('rentAsVenue.text2') },
-            { icon: Star, title: 'Unique Setting', desc: 'A carefully renovated barn with rustic charm in the heart of Bøur.' },
-            { icon: DollarSign, title: 'Transparent Pricing', desc: t('rentAsVenue.text3') },
-          ].map(({ icon: Icon, title, desc }) => (
-            <div key={title} className="flex gap-5">
+          {highlights.map(({ icon: Icon, titleKey, descKey }) => (
+            <div key={titleKey} className="flex gap-5">
               <div className="mt-1 shrink-0 p-2.5 rounded bg-amber-50 text-amber-600">
                 <Icon size={20} />
               </div>
               <div>
-                <h3 className="font-semibold text-stone-800 mb-1">{title}</h3>
-                <p className="text-stone-500 text-sm leading-relaxed">{desc}</p>
+                <h3 className="font-semibold text-stone-800 mb-1">{t(titleKey)}</h3>
+                <p className="text-stone-500 text-sm leading-relaxed">
+                  {descKey ? t(descKey) : t('rentAsVenue.text2')}
+                </p>
               </div>
             </div>
           ))}
         </div>
       </Section>
 
-      {/* Sections */}
+      {/* Options section */}
       <Section className="grid md:grid-cols-2">
         <div className="relative h-72 md:h-auto overflow-hidden">
           <img src="/images/luttakarar_9.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />
         </div>
         <div className="flex flex-col justify-center px-10 py-16 bg-[#fdfcf9]">
-          <span className="text-amber-600 text-xs uppercase tracking-widest font-medium mb-3">Options</span>
+          <span className="text-amber-600 text-xs uppercase tracking-widest font-medium mb-3">
+            {t('rentAsVenue.section2_tag')}
+          </span>
           <h2 className="font-display text-3xl sm:text-4xl font-semibold text-stone-800 mb-5 leading-snug">
             {t('rentAsVenue.title2')}
           </h2>
@@ -95,7 +119,9 @@ export default function RentAsVenue() {
       {/* Booking CTA */}
       <Section className="grid md:grid-cols-2 bg-stone-50">
         <div className="flex flex-col justify-center px-10 py-16 order-2 md:order-1">
-          <span className="text-amber-600 text-xs uppercase tracking-widest font-medium mb-3">Book now</span>
+          <span className="text-amber-600 text-xs uppercase tracking-widest font-medium mb-3">
+            {t('rentAsVenue.section4_tag')}
+          </span>
           <h2 className="font-display text-3xl sm:text-4xl font-semibold text-stone-800 mb-5 leading-snug">
             {t('rentAsVenue.title4')}
           </h2>

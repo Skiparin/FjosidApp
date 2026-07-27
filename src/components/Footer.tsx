@@ -6,9 +6,18 @@ import { FacebookIcon, InstagramIcon } from './SocialIcons';
 export default function Footer() {
   const { t } = useTranslation();
 
+  const navLinks = [
+    { key: 'footer.navLinks.home',        to: '/' },
+    { key: 'footer.navLinks.menu',        href: '/images/Menu.pdf' },
+    { key: 'footer.navLinks.booking',     to: '/booking' },
+    { key: 'footer.navLinks.meetings',    to: '/meetings' },
+    { key: 'footer.navLinks.rentAsVenue', to: '/rent-as-venue' },
+  ];
+
   return (
     <footer className="bg-[#111] border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-4 gap-12">
+
         {/* Brand */}
         <div className="md:col-span-1">
           <Link to="/">
@@ -18,15 +27,14 @@ export default function Footer() {
               className="h-12 w-auto object-contain mb-4"
             />
           </Link>
-          <p className="text-stone-400 text-sm leading-relaxed">
-            A unique farm-to-table restaurant in Bøur, Faroe Islands.
-          </p>
+          <p className="text-stone-400 text-sm leading-relaxed">{t('footer.tagline')}</p>
           <div className="flex gap-4 mt-5">
             <a
               href="https://www.facebook.com/profile.php?id=61551701065518"
               target="_blank"
               rel="noopener noreferrer"
               className="text-stone-500 hover:text-amber-400 transition-colors"
+              aria-label="Facebook"
             >
               <FacebookIcon size={20} />
             </a>
@@ -35,6 +43,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="text-stone-500 hover:text-amber-400 transition-colors"
+              aria-label="Instagram"
             >
               <InstagramIcon size={20} />
             </a>
@@ -43,21 +52,15 @@ export default function Footer() {
 
         {/* Navigation */}
         <div>
-          <h3 className="text-white font-semibold text-sm uppercase tracking-widest mb-5">
-            Navigate
+          <h3 className="text-white font-semibold text-xs uppercase tracking-widest mb-5">
+            {t('footer.navTitle')}
           </h3>
           <ul className="space-y-3">
-            {[
-              { label: 'Home', to: '/' },
-              { label: 'Menu', href: '/images/Menu.pdf' },
-              { label: 'Booking', to: '/booking' },
-              { label: 'Meetings', to: '/meetings' },
-              { label: 'Rent as Venue', to: '/rent-as-venue' },
-            ].map(({ label, to, href }) => (
-              <li key={label}>
+            {navLinks.map(({ key, to, href }) => (
+              <li key={key}>
                 {to ? (
                   <Link to={to} className="text-stone-400 hover:text-amber-400 text-sm transition-colors">
-                    {label}
+                    {t(key)}
                   </Link>
                 ) : (
                   <a
@@ -66,7 +69,7 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     className="text-stone-400 hover:text-amber-400 text-sm transition-colors"
                   >
-                    {label}
+                    {t(key)}
                   </a>
                 )}
               </li>
@@ -76,8 +79,8 @@ export default function Footer() {
 
         {/* Partners */}
         <div>
-          <h3 className="text-white font-semibold text-sm uppercase tracking-widest mb-5">
-            Partners
+          <h3 className="text-white font-semibold text-xs uppercase tracking-widest mb-5">
+            {t('footer.partnersTitle')}
           </h3>
           <ul className="space-y-3">
             <li>
@@ -105,8 +108,8 @@ export default function Footer() {
 
         {/* Contact */}
         <div>
-          <h3 className="text-white font-semibold text-sm uppercase tracking-widest mb-5">
-            Contact
+          <h3 className="text-white font-semibold text-xs uppercase tracking-widest mb-5">
+            {t('footer.contactTitle')}
           </h3>
           <ul className="space-y-3">
             <li className="flex items-start gap-2 text-stone-400 text-sm">
@@ -123,7 +126,7 @@ export default function Footer() {
             </li>
             <li className="flex items-center gap-2 text-stone-400 text-sm">
               <Mail size={15} className="shrink-0 text-amber-500" />
-              <span className="lowercase">{t('footer.email')}</span>
+              <span>{t('footer.email')}</span>
             </li>
           </ul>
           <p className="text-stone-600 text-xs mt-4">{t('footer.cvr')}</p>
@@ -131,7 +134,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10 py-5 px-6 text-center text-stone-600 text-xs">
-        © {new Date().getFullYear()} Fjósið. All rights reserved.
+        {t('footer.copyright', { year: new Date().getFullYear() })}
       </div>
     </footer>
   );

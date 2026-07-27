@@ -1,0 +1,107 @@
+const fo = {
+  nav: {
+    home: 'Heim',
+    menu: 'Menu',
+    booking: 'Bóking',
+    meetings: 'Fundir',
+    rentAsVenue: 'Leiga høli',
+  },
+  home: {
+    imageTitle: 'Vælkomin til Fjósið',
+    imageText:
+      'Fjósið er ein serstøk matstova, sum liggur í bygdini Bøur, í ovaru hædd av einum fjósi. Vit bjóða eina farm-to-table matskrá við rávørum frá okkara egna bóndagarði, so sum lamb og neytakjøt, umframt lokalt laks. Opið fyri almenninginum ávís tíðarskeið, men Fjósið tekur ímóti bíleggingum fyri privat borðhald, fundir og tiltøk alt árið.',
+    detailsTitle1: 'Eitt fjós við søgu',
+    details1:
+      'Fjósið er staðsett í einum einføldum, væl umvældum fjósi, sum hóskar væl til umhvørvið. Vit hava varðveitt rúmið so upprunaligt sum til ber, samstundis sum vit hava gjørt tað til eitt hugnaligt stað til okkara gestir. Tað er ikki fínt, men vit halda, at hesin rustikki stílurin gevur eitt jarðbundið og heimligt huglag til at njóta eina góða máltíð. Okkara mál er at skapa eitt rúm, sum kennist fjálgt  og gott, har dentur er lagdur á tann góða matin og gott selskap.',
+    detailsTitle2: 'Lokalar rávørur',
+    details2:
+      'Okkara tilgongd til mat er einføld: vit brúka tað, sum er tøkt rundan um okkum. Rávørurnar í okkara rættum, koma frá okkum ella frá lokalum framleiðarum, soleiðis at vit kunnu tryggja okkum, at tað er stuttflutt og av góðari góðsku. Vit hava bæði seyð og neyt, og samstarva eisini við lokalar framleiðarar. Við at halda mest møguligt staðbundi, kunnu vit bjóða mat, sum eru  knýttir at samfelagnum, ímeðan vit stuðla smáum, burðardyggum framleiðarum.',
+    detailsTitle3: 'Staðbundi',
+    details3:
+      'Fjósið verður rikið av fólki úr lokalsamfelagnum, og soleiðis vilja vit hava tað. Tað er eitt lítið stað, og vit dáma tað einfalt, við denti løgdum á at skapa eitt heimaligt og hugnaligt huglag.  Vit virðismeta sambandið við okkara grannar, og okkara mál er at bjóða eitt stað, har øll eru vælkomin. Antin tú ert úr grannalagnum ella ert á vitjan, vilja vit, at Fjósið skal kennast sum eitt stað, har fólk kunnu koma saman, njóta góðan mat og føla seg sum ein part av staðnum.',
+    bookingButton: 'Bóking',
+    menuButton: 'Menu',
+    galleryButton: 'Myndasavn',
+    whatWeOffer: 'Hvat vit bjóða',
+    dining: 'Ein fullfíggjað matsuppliving',
+    events: 'Fundir og tiltøk',
+    venue: 'Leiga Fjósið sum eitt høli',
+    aboutUs: 'Um okkum',
+    jennyHeri:
+      'Heri er bóndin og tann, sum kom við hugskotið at gera ein part av fjósinum til ein matsal/hølið. Jenny er konan, leiðarin, kokkurin og reingerðarfólkið.',
+    eydsteinEllef:
+      'Vinir okkara, Eystein og Ellef, sum reka Bluegate.fo, leggja eitt sindur av ævintýri til okkara uppliving. Teir bjóða siglitúrar við sínum skjótbátum, so okkara gestir lættliga kunnu njóta ein dag á sjónum og eina máltíð í okkara fjósi.',
+    eydfinnPoula:
+      'Eyðfinn, systkinabarni hjá Hera, hjálpti at umskapa fjósið til tað, sum Fjósið er í dag. Saman við konu síni, Poulu, eru tey ein stórur partur av okkara gerandisdegi her, hjálpa til í køkinum og tryggja, at alt gongur smidliga.',
+    tordur:
+      'Tórður, sonur Eyðfinns og Poulu, er um at gerast byggimeistari. Hann hevur verið við til at gera Fjósið til veruleika og umboðar næstu ættarlið í okkara samfelag, har hann sameinir gamlar siðvenjur við nýggjum hugskotum.',
+    location: 'Staðseting',
+  },
+  booking: {
+    title: 'Bóking',
+    date: 'Dato',
+    numberOfGuests: 'Tal av gestum',
+    firstName: 'Fornavn',
+    lastName: 'Eftirnavn',
+    email: 'Teldupostur',
+    phone: 'Telefonnummar',
+    message: 'Boð',
+    reserve: 'Send bílegging',
+    success: 'Takk fyri tína bílegging. Vit koma at seta okkum í samband við teg so skjótt sum møguligt.',
+    firstNameRequired: 'Fornavn er kravt',
+    lastNameRequired: 'Eftirnavn er kravt',
+    emailRequired: 'Teldupostur er kravt',
+    emailInvalid: 'Telduposturin er ógildugur',
+    phoneRequired: 'Telefonnummar er kravt',
+    phoneInvalid: 'Telefonnummari er ógildugur',
+    guestsRequired: 'Tal av gestum er kravt',
+    guestsTooFew: 'Tal av gestum má vera 8 ella fleiri',
+    guestsTooMany: 'Tal av gestum má vera 40 ella færri',
+  },
+  gallery: {
+    title: 'Myndasavn',
+  },
+  meetings: {
+    title: 'Fundir og ráðstevnur',
+    text: 'Vælkomin til Fjósið. Okkara høli er eitt fjølbroytt stað, sum lættliga kann verða brúkt bæði sum hugnaligur matsalur og sum virkisøki til ymisk tiltøk. Liggandi í Bø, er Fjósið væl egnað til ymisk sløg av tiltøkum, frá smærri samkomum til vinnuligar fundir. Um tú ætlar eitt seminar ella eina persónliga hátíð, bjóðar okkara leigutænasta eitt hóskandi og einfalt høli til títt tiltak. Við nýggjum hentleikum og eini blíðari atmosfæru, miðar Fjósið eftir at skapa eina hugnaliga uppliving fyri teg og tínar gestir.',
+    title2: 'Leigumøguleikar fyri fundarhøli',
+    text2: 'Um tit skulu hava eitt fundarhølið, er Fjósið ein góður møguleiki. Burtursæð frá tí vakra útsýninum og tí hugnaliga hølinum, hava vit uppvørpu, hátalara og flippboard og syrgja fyri at tit hava kaffi/te og vatn ígjøgnum dagin. Eisini er møguleiki at keypa mat afturat, tað kann vera morgunmatur, miðmáli (frokost), ella kaka. Hetta má sjálvandi bíleggjast áðrenn.',
+    text2b: 'Prísurin fyri ½ dag er 3000kr. uttan mvg og fyri heilan dag 6000kr uttan mvg.',
+    title3: 'Tænastur og hentleikar',
+    text3: 'Um tú skalt halda føðingardag, konfirmatión ella líknandi ber til at leiga hølið hjá okkum og so standa tit sjálvi fyri matinum. Tit rudda sjálvandi upp eftir tykkum, men vit vaska bæði áðrenn og aftaná.',
+    text3b: 'Hetta kostar fyri eitt døgn 3750kr. við mvg.',
+    title4: 'Bílegging og borðbílegging',
+    text4: 'Ert tú klár/ur at bíleggja Fjósið til tín næsta fund ella vinnuliga tiltak?\nAt tryggja tær ynsktu dagfestingina er einfalt. Við at trýsta á knøttin niðanfyri, kemur tú á bíleggingarsíðuna, har tú kanst senda eina bílegging. Um tú hevur brúk fyri hølinum til ein heilendan dag ella hálvan dag, so arbeiða vit saman við tær at laga tað til tín tíðarætlan. Eftir váttan, geva vit tær øll neyðug tíðindi og tryggja, at alt er klárt til eitt væleydnað tiltak. Tú kanst líta á Fjósið til at lyfta tínar fundir við okkara framúrskarandi høli og uppmerkssama tænastu.',
+    bookingButton: 'Bóking',
+  },
+  rentAsVenue: {
+    title: 'Leiga sum hølið',
+    text: 'Vælkomin í Fjósið - títt fjølbroytta stað tilógloymandi samkomur! Um tú ætlar tær eina føðingardagsveitslu, eina dópsveitslu ella okkurt annað serligt hátíðarhald, kann Fjósið gera tína løtu heilt serliga. Staðsett í hjartanum av Bø, bjóðar okkara hølið eina serstaka samanrenning av rustikkari sjarmu og nútímans hentleikum, sum skapa ógloymandi løtur saman við tínum kæru. Kom og uppdaga møguleikarnar, sum bíða tær í Fjósinum.',
+    title2: 'Leigumøguleikar fyri hølið',
+    text2: 'Vit skilja, at hvør samkoma er serstøk, og tí bjóða vit smidligar leigumøguleikar, ið hóska til tín tørv. Tú kanst velja millum at leiga fyri ein heilan, ella ein hálvan dag, alt eftir hvussu leingi tiltakið varar. Vit eru her til at nøkta tín tørv.',
+    title3: 'Prísir',
+    text3: 'Ein heildagsleiga av okkara høli kostar bert 6000 DKK, meðan ein hálvdagsleiga er tøk fyri 3000 DKK. \nUm talan er um fundir, er uppvørpa og flippover tøkt og kaffi/te og vatn við í prísinum. Til ber at bíleggja t.d. morgunmat ella frokost og tann kostnaðurin kemur so afturat leiguni.',
+    title4: 'Bílegging og fyrispurningar',
+    text4: 'Klár/ur at bókað eitt tiltak í Fjósinum? Vit gera tilgongdina einfalda, við at trýsta á knøttin niðanfyri, fert tú til bíleggingarsíðuna, har tú kanst senda eina bílegging. Um tú hevur spurningar um hentleikar ella serlig ynskir, so eru vit her til at hjálpa tær. Set teg í samband við okkum í dag, fyri at byrja at fyrireika títt næsta tiltak í Fjósinum.',
+    bookingButton: 'Bóking',
+  },
+  admin: {
+    title: 'Admin',
+    addDate: 'Legg dato afturat',
+    datesTitle: 'Datoar at sía út úr dagvalsinum',
+    search: 'Leita',
+    date: 'Dato',
+  },
+  footer: {
+    address: '1 TRAÐARVEGUR',
+    city: 'FO-386, BØUR',
+    country: 'FØROYAR',
+    phone: '+298 286032',
+    email: 'FJOSID2023@GMAIL.COM',
+    cvr: 'CVR: 664855',
+    theView: 'The View',
+    bluegate: 'Bluegate',
+  },
+};
+
+export default fo;

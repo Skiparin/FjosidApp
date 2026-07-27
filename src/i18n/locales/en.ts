@@ -1,0 +1,107 @@
+const en = {
+  nav: {
+    home: 'Home',
+    menu: 'Menu',
+    booking: 'Booking',
+    meetings: 'Meetings',
+    rentAsVenue: 'Rent as venue',
+  },
+  home: {
+    imageTitle: 'Welcome to Fjósið',
+    imageText:
+      'Located in the village of Bøur, Fjósið is a unique restaurant situated in the top part of a barn. We provide a farm-to-table dining experience with ingredients sourced from our farm, including lamb and cow, as well as local salmon. Open to the public seasonally, Fjósið also accepts year-round bookings for private dining, meetings, and events.',
+    detailsTitle1: 'A Barn with History',
+    details1:
+      'Fjósið is located in a simple, carefully renovated barn that reflects the quiet charm of Bøur. We\'ve kept the space true to its original form, preserving the natural simplicity of the building while making it a welcoming spot for our guests. It\'s not fancy, but we believe the rustic setting adds a down-to-earth atmosphere to the experience, offering a peaceful place to enjoy a meal. Our aim is to create a space that feels comfortable and familiar, where the focus is on good food and good company.',
+    detailsTitle2: 'Local Ingredients',
+    details2:
+      'Our approach to food is straightforward: we use what\'s available around us. The ingredients in our dishes come from our farm or nearby producers, ensuring that everything is fresh and local. We raise our own lamb and cattle, and work with local salmon farmers to offer simple, honest meals that highlight the flavors of our region. By keeping things local, we can offer dishes that are both fresh and connected to the community, all while supporting small-scale, sustainable producers.',
+    detailsTitle3: 'Rooted in Community',
+    details3:
+      'Fjósið is run by people from the local community, and we keep it that way. It\'s a small place, and we like to keep things simple, focusing on creating a familiar and relaxed atmosphere. Being locally owned, we value the connections we have with our neighbors, and our goal is to provide a space where everyone feels welcome. Whether you\'re from nearby or visiting, we want Fjósið to feel like a place where people can come together, enjoy honest food, and feel part of something local and genuine.',
+    bookingButton: 'Booking',
+    menuButton: 'Menu',
+    galleryButton: 'Gallery',
+    whatWeOffer: 'What we offer',
+    dining: 'A Complete Dining Experience',
+    events: 'Meetings and Events',
+    venue: 'Rent Fjósið as a Venue',
+    aboutUs: 'About us',
+    jennyHeri:
+      'Heri is the farmer and the one who came up with the idea of making part of the barn into a restaurant/venue. Jenny is the wife, boss, chef and cleaner.',
+    eydsteinEllef:
+      'Our friends Eystein and Ellef, who run Bluegate.fo, add a bit of adventure to our experience. They offer sightseeing tours on their fast boats, making it easy for our guests to enjoy a day on the water and a meal in our barn.',
+    eydfinnPoula:
+      "Eyðfinn, Heri's cousin, helped turn the barn into what Fjósið is today. Together with his wife Poula, they're a big part of our day-to-day life here, helping in the kitchen and keeping the place running smoothly.",
+    tordur:
+      "Tórður, Eyðfinn and Poula's son, is about to become a constructor. He's been involved in making Fjósið a reality and represents the next generation of our community, blending old traditions with new ideas.",
+    location: 'Location',
+  },
+  booking: {
+    title: 'Booking',
+    date: 'Date',
+    numberOfGuests: 'Number of Guests',
+    firstName: 'First name',
+    lastName: 'Last name',
+    email: 'Email',
+    phone: 'Phone number',
+    message: 'Message',
+    reserve: 'Reserve Booking',
+    success: 'Thanks for your reservation. We will contact you as soon as possible.',
+    firstNameRequired: 'First name is required',
+    lastNameRequired: 'Last name is required',
+    emailRequired: 'Email is required',
+    emailInvalid: 'The email address is invalid',
+    phoneRequired: 'Phone number is required',
+    phoneInvalid: 'The phone number is invalid',
+    guestsRequired: 'Number of guests is required',
+    guestsTooFew: 'Number of guests must be 8 or higher',
+    guestsTooMany: 'Number of guests must be 40 or lower',
+  },
+  gallery: {
+    title: 'Gallery',
+  },
+  meetings: {
+    title: 'Meetings and Conferences',
+    text: "Welcome to Fjósið. Our venue offers a flexible space that easily adapts from a cozy restaurant setting to a functional event area. Located in Bøur, Fjósið is suitable for a range of occasions, from small gatherings to corporate meetings. Whether you're planning a seminar or a personal celebration, our rental service provides a simple and fitting setting for your event. With modern facilities and a welcoming atmosphere, Fjósið aims to create a comfortable experience for you and your guests.",
+    title2: 'Meeting Venue Rental Options',
+    text2: 'If you want to have a meeting in the Faroe Islands, you can come to us. Besides breathtaking views and a cosy environment, we have a overhead projector, loudspeaker and a flippboard. We see to that you have coffee/tea and water during the day and there is also possibilty to order food for the day. It can be breakfast, lunch, cake or all 3. This must of course be ordered before hand.',
+    text2b: 'The price for ½ day is 3000 DKK VAT not included and a whole day, 6000 DKK VAT not incl.',
+    title3: 'Amenities and Services',
+    text3: 'If you want to host a birthday or something similar, away from home, you can rent our venue and you see to the food yourselves. You clean up afterwards, but we do the washing.',
+    text3b: 'This costs 3750 DKK VAT inc.',
+    title4: 'Booking and Reservation',
+    text4: "Ready to book Fjósið for your next meeting or corporate event? Securing your desired date is simple. Using the button below will take you to the bookings page and there it is possible to send a reservation. Whether you need the space for a full day or a half day, we'll work with you to accommodate your schedule. Upon confirmation, we'll provide all the necessary details and ensure that everything is in place for a successful event. Trust Fjósið to elevate your meetings with our exceptional venue and attentive service.",
+    bookingButton: 'Booking',
+  },
+  rentAsVenue: {
+    title: 'Rent As Venue',
+    text: "Welcome to Fjósið - your versatile venue for unforgettable gatherings! Whether you're planning a birthday bash, a baptism celebration, or any other special event, Fjósið is here to make your occasion truly memorable. Nestled in the heart of Bøur, our venue offers a unique blend of rustic charm and modern amenities, perfect for creating unforgettable moments with your loved ones. Discover the possibilities that await you at Fjósið!",
+    title2: 'Venue Rental Options',
+    text2: "At Fjósið, we understand that every event is unique, which is why we offer flexible rental options to suit your needs. Choose from a full-day rental or a half-day rental, depending on the duration of your event. Our full-day rental option allows you exclusive access to the venue for the entire day, from setup to cleanup, ensuring ample time to create cherished memories with your guests. For shorter gatherings, our half-day rental option provides the perfect solution, allowing you to enjoy all the amenities of Fjósið for a convenient timeframe. Whatever your event requires, we're here to accommodate your needs with our affordable and convenient rental options.",
+    title3: 'Pricing Information',
+    text3: "Our pricing structure at Fjósið is designed to provide excellent value for your money, allowing you to host your event without breaking the bank. A full-day rental of our venue is priced at just 6000 DKK, while a half-day rental is available for 3000 DKK. This transparent pricing ensures that you know exactly what to expect, with no hidden fees or surprises. With Fjósið, you can host your event with confidence, knowing that you're getting the best value for your investment.",
+    title4: 'Booking and Inquiries',
+    text4: "Ready to book your event at Fjósið? We make the process simple and stress-free. Using the button below will take you to the bookings page and there it is possible to send a reservation. Whether you have questions about availability, amenities, or special requests, we're here to assist you every step of the way. Contact us today to start planning your next unforgettable event at Fjósið!",
+    bookingButton: 'Booking',
+  },
+  admin: {
+    title: 'Admin',
+    addDate: 'Add Date',
+    datesTitle: 'Dates to filter out of the date picker',
+    search: 'Search',
+    date: 'Date',
+  },
+  footer: {
+    address: '1 TRAÐARVEGUR',
+    city: 'FO-386, BØUR',
+    country: 'FAROE ISLANDS',
+    phone: '+298 286032',
+    email: 'FJOSID2023@GMAIL.COM',
+    cvr: 'CVR: 664855',
+    theView: 'The View',
+    bluegate: 'Bluegate',
+  },
+};
+
+export default en;

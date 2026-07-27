@@ -126,6 +126,8 @@ const fo = {
     feature2_desc: 'Kaffi, te og vatn ígjøgnum dagin. Morgunmatur, miðmáli ella kaka kann bíleggjas áðrenn.',
     feature3_title: 'Prísir',
     feature3_desc: 'Hálvur dagur 3.000 kr. (uttan mvg) · Heildagur 6.000 kr. (uttan mvg).',
+    featuresTag: 'Við í leiguni',
+    featuresTitle: 'Hetta er við',
 
     section1_tag: 'Fundir',
     title2: 'Fundarleiga',

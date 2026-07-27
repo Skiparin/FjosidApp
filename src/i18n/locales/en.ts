@@ -126,6 +126,8 @@ const en = {
     feature2_desc: 'Coffee, tea and water during the day. Breakfast, lunch or cake can be ordered in advance.',
     feature3_title: 'Pricing',
     feature3_desc: 'Half-day 3,000 DKK (excl. VAT) · Full day 6,000 DKK (excl. VAT).',
+    featuresTag: 'Included',
+    featuresTitle: 'What is included',
 
     section1_tag: 'Meetings',
     title2: 'Meeting Rental',

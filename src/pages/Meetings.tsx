@@ -38,8 +38,17 @@ export default function Meetings() {
       </Section>
 
       {/* Feature strip */}
-      <Section className="bg-stone-50 py-20 px-6 border-b border-stone-200">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+      <Section className="bg-stone-50 py-24 px-6 border-b border-stone-200">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-amber-600 text-xs uppercase tracking-widest font-medium mb-3">
+              {t('meetings.featuresTag')}
+            </p>
+            <h2 className="font-display text-3xl sm:text-4xl font-semibold text-stone-800">
+              {t('meetings.featuresTitle')}
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {features.map(({ icon: Icon, titleKey, descKey }) => (
             <div key={titleKey} className="flex gap-5 p-5 bg-white border border-stone-100 rounded-sm shadow-sm">
               <div className="mt-1 shrink-0 p-2.5 rounded bg-amber-50 text-amber-600">
@@ -51,6 +60,7 @@ export default function Meetings() {
               </div>
             </div>
           ))}
+          </div>
         </div>
       </Section>
 
@@ -89,8 +99,8 @@ export default function Meetings() {
       </Section>
 
       {/* Booking CTA */}
-      <Section className="py-24 bg-[#fdfcf9]">
-        <div className="max-w-4xl mx-auto px-6">
+      <Section className="py-28 sm:py-32 bg-stone-50 border-t border-stone-200">
+        <div className="max-w-5xl mx-auto px-6">
           <div className="bg-white border border-stone-200 rounded-sm shadow-sm p-10 sm:p-12 text-center">
             <span className="text-amber-600 text-xs uppercase tracking-widest font-medium mb-4 block">
               {t('meetings.section3_tag')}

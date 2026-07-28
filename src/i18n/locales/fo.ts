@@ -118,6 +118,8 @@ const fo = {
   meetings: {
     pageTag: 'Vinnuligt og privat',
     title: 'Fundir og ráðstevnur',
+    introTag: 'Yvirlit',
+    introTitle: 'Eitt praktiskt fundarhøli',
     text: 'Fjósið kann leigast til fundir og tiltøk. Rúmið hóskur til smærri bólkar og kann brúkast til seminar, arbeiðsdag ella líknandi. Tað liggur í Bø, sum er lítið úr leiðini, men tað merkir eisini, at tað er stilt.',
 
     feature1_title: 'AV-útbúnaður',

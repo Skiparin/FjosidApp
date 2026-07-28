@@ -118,6 +118,8 @@ const en = {
   meetings: {
     pageTag: 'Corporate & private',
     title: 'Meetings and Conferences',
+    introTag: 'Overview',
+    introTitle: 'A practical venue for meetings',
     text: "Fjósið can be rented for meetings and events. The space works for small groups and can be set up for a seminar, a work day or a similar gathering. It is located in Bøur, which is a bit out of the way, but that also means it is quiet.",
 
     feature1_title: 'AV Equipment',

@@ -30,6 +30,12 @@ export default function Meetings() {
       {/* Intro */}
       <Section className="grid md:grid-cols-2 border-b border-stone-200">
         <div className="flex flex-col justify-center px-12 py-20 bg-[#fdfcf9] order-2 md:order-1">
+          <span className="text-amber-600 text-xs uppercase tracking-widest font-medium mb-4">
+            {t('meetings.introTag')}
+          </span>
+          <h2 className="font-display text-3xl sm:text-4xl font-semibold text-stone-800 mb-6 leading-snug">
+            {t('meetings.introTitle')}
+          </h2>
           <p className="text-stone-500 text-[15px] leading-relaxed">{t('meetings.text')}</p>
         </div>
         <div className="relative h-80 md:h-[520px] overflow-hidden order-1 md:order-2">

@@ -148,6 +148,8 @@ const en = {
   rentAsVenue: {
     pageTag: 'Venue rental',
     title: 'Rent as Venue',
+    introTag: 'Private events',
+    introTitle: 'Use Fjósið for your event',
     text: "You can rent Fjósið for a private event — a birthday, a confirmation, a family gathering or something similar. You bring the food; we provide the space. You tidy up afterwards and we do the washing.",
 
     pricingTag: 'Pricing',
@@ -164,9 +166,13 @@ const en = {
     fullDayDesc: 'All-day access from setup to cleanup.',
 
     highlight1_title: 'Flexible Hours',
+    highlight1_desc: 'Choose half day or full day depending on your plan.',
     highlight2_title: 'Barn Setting',
     highlight2_desc: 'A renovated barn in the village of Bøur.',
     highlight3_title: 'Clear Pricing',
+    highlight3_desc: 'Fixed prices with no hidden extras.',
+    highlightsTag: 'Included',
+    highlightsTitle: 'Practical information',
 
     section2_tag: 'Options',
     title2: 'Rental Options',

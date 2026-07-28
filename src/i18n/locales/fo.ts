@@ -148,6 +148,8 @@ const fo = {
   rentAsVenue: {
     pageTag: 'Leiga av hølinum',
     title: 'Leiga sum høli',
+    introTag: 'Privat tiltøk',
+    introTitle: 'Nýt Fjósið til títt tiltak',
     text: 'Tú kanst leiga Fjósið til privat tiltak — ein føðingardag, ein konfirmatión, ein familjasamkoma ella líknandi. Tú komir við matinum sjálv/ur; vit bjóða rúmið. Tú ruddar upp eftir, og vit vaska.',
 
     pricingTag: 'Prísir',
@@ -164,9 +166,13 @@ const fo = {
     fullDayDesc: 'Adgangur heilan dag frá uppseting til reingerð.',
 
     highlight1_title: 'Smidligur tíðarrammi',
+    highlight1_desc: 'Vel hálvan dag ella heilan dag eftir tørvi.',
     highlight2_title: 'Fjósið',
     highlight2_desc: 'Eitt umvalt fjós í bygdini Bø.',
     highlight3_title: 'Klárt verð',
+    highlight3_desc: 'Fastir prísir uttan duldan kostnað.',
+    highlightsTag: 'Hetta er við',
+    highlightsTitle: 'Praktisk kunning',
 
     section2_tag: 'Møguleikar',
     title2: 'Leigumøguleikar',

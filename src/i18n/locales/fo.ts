@@ -137,7 +137,7 @@ const fo = {
     section2_tag: 'Privat tiltøk',
     title3: 'Privat tiltak leiga',
     text3: 'Um tú skalt halda føðingardag ella líknandi uttan fyri heimið, kanst tú leiga hølið og koma við matinum sjálv/ur. Tú ruddar upp eftir, og vit vaska.',
-    text3b: 'Kostar: 3.750 kr. (við mvg).',
+    text3b: 'Kostar: 3.750 kr. (uttan mvg).',
 
     section3_tag: 'Bílegg',
     title4: 'At bíleggja',
@@ -157,12 +157,12 @@ const fo = {
     halfDayLabel: 'Hálvur dagur',
     halfDayPrice: '3.000',
     halfDayUnit: 'kr.',
-    halfDayVat: 'við mvg',
+    halfDayVat: 'uttan mvg',
     halfDayDesc: 'Fyri styttri samkomur.',
     fullDayLabel: 'Heildagur',
     fullDayPrice: '6.000',
     fullDayUnit: 'kr.',
-    fullDayVat: 'við mvg',
+    fullDayVat: 'uttan mvg',
     fullDayDesc: 'Adgangur heilan dag frá uppseting til reingerð.',
 
     highlight1_title: 'Smidligur tíðarrammi',

@@ -137,7 +137,7 @@ const en = {
     section2_tag: 'Private events',
     title3: 'Private Event Rental',
     text3: 'If you want to celebrate a birthday or something similar outside the home, you can rent the venue and bring your own food. You clean up afterwards; we handle the washing.',
-    text3b: 'Cost: 3,750 DKK (VAT incl.).',
+    text3b: 'Cost: 3,750 DKK (excl. VAT).',
 
     section3_tag: 'Reserve',
     title4: 'Making a Booking',
@@ -157,12 +157,12 @@ const en = {
     halfDayLabel: 'Half Day',
     halfDayPrice: '3,000',
     halfDayUnit: 'DKK',
-    halfDayVat: 'VAT included',
+    halfDayVat: 'excl. VAT',
     halfDayDesc: 'For shorter gatherings.',
     fullDayLabel: 'Full Day',
     fullDayPrice: '6,000',
     fullDayUnit: 'DKK',
-    fullDayVat: 'VAT included',
+    fullDayVat: 'excl. VAT',
     fullDayDesc: 'All-day access from setup to cleanup.',
 
     highlight1_title: 'Flexible Hours',

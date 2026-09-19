@@ -8,11 +8,11 @@ export default function Footer() {
 
   const navLinks = [
     { key: 'footer.navLinks.home',        to: '/' },
-    { key: 'footer.navLinks.about',       to: '/about' },
     { key: 'footer.navLinks.menu',        href: '/images/Menu.pdf' },
     { key: 'footer.navLinks.booking',     to: '/booking' },
     { key: 'footer.navLinks.meetings',    to: '/meetings' },
     { key: 'footer.navLinks.rentAsVenue', to: '/rent-as-venue' },
+    { key: 'footer.navLinks.about',       to: '/about' },
   ];
 
   return (

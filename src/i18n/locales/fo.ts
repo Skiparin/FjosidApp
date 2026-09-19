@@ -12,7 +12,7 @@ const fo = {
     location_tag: 'Bøur · Føroyar',
     imageTitle: 'Vælkomin til Fjósið',
     imageText:
-      'Fjósið liggur í bygdini Bøur og er ein matstova í ovaru hædd av einum fjósi. Vit gera mat av rávørum frá okkum sjálvum — lamb, neytakjøt og lokalt laks. Vit eru opið fyri almenninginum ávís tíðarskeið og taka ímóti bíleggingum fyri privat borðhald, fundir og tiltøk alt árið.',
+      'Fjósið liggur í bygdini Bøur og er ein matstova í ovaru hædd av einum fjósi. Vit gera mat av rávørum frá okkum sjálvum - lamb, neytakjøt og lokalan laks. Vit eru opið fyri almenninginum ávís tíðarskeið og taka ímóti bíleggingum fyri privat borðhald, fundir og tiltøk alt árið.',
     bookingButton: 'Bóking',
     menuButton: 'Menu',
     galleryButton: 'Myndasavn',
@@ -20,27 +20,27 @@ const fo = {
     section1_tag: 'Okkara søga',
     detailsTitle1: 'Eitt fjós í Bø',
     details1:
-      'Fjósið er í einum umvaltum fjósi, sum hevur verið partur av Guttesen-garðinum í fleiri tiár. Vit hava haldið rúmið so upprunaligt sum til ber. Tað er ein einfaldur, roligur staður at eta — onki fínt, men umhvørvið gevur matinum eitthvørt, ið ein vanligur stova ikki kann.',
+      'Fjósið er í einum umvaltum fjósi, sum hevur verið partur av Niðurstovu garðinum í fleiri áratíggjur. Vit hava hildið hølið so upprunaligt sum til ber. Tað er ein einfaldur, rolig matstova at eta í — onki fínt, men umhvørvið gevur matinum eitthvørt, ið ein vanlig matstova ikki kann.',
 
-    section2_tag: 'Okkara køk',
+    section2_tag: 'Okkara køkur',
     detailsTitle2: 'Lokalar rávørur',
     details2:
-      'Vit brúka tað, sum er tøkt frá garðinum og frá lokalum framleiðarum. Vit hava bæði seyð og neyt, og samstarva við lokalar laksaframleiðarar. Maturin er beinstevndur — av tíðini og lokalur, uttan fýlalæti.',
+      'Vit brúka tað, sum er tøkt frá garðinum og frá lokalum framleiðarum. Vit hava bæði seyð og neyt, og samstarva við lokalar laksaframleiðarar. Maturin er einfaldur, gjørdur úr tí, sum árstíðin og nærumhvørvið hevur at bjóða.',
 
     section3_tag: 'Samfelag',
     detailsTitle3: 'Staðbundi',
     details3:
-      'Fjósið er eigt og rikið av fólki úr lokalsamfelagnum. Tað er ein lítil staður, og soleiðis vilja vit hava tað. Vit villa, at tað skal finnast sum ein staður, har tú kanst koma fyri eina hóskandi máltíð uttan aftan.',
+      'Fjósið er átt og rikið av fólki úr lokalsamfelagnum. Vit vilja varðveita ta hugnaligu og persónligu kensluna, so øll kenna seg vælkomin. Her kanst tú njóta eina góða máltíð í friðarligum og hugnaligum umhvørvi.',
 
     offersTag: 'Upplivingar',
-    whatWeOffer: 'Hvat vit bjóða',
+    whatWeOffer: 'Vit bjóða',
     dining: 'Borðhald',
     events: 'Fundir og tiltøk',
     venue: 'Leiga Fjósið sum eitt høli',
 
     teamTag: 'Fólkið',
     aboutUs: 'Um okkum',
-    aboutTeaser: 'Aftanfyri Fjósið er ein lítil bólkur av fólki úr lokalsamfelagnum, sum hjálpir til at halda staðin gangandi.',
+    aboutTeaser: 'Fjósið verður rikið av einum lítlum bólki av fólki úr lokalsamfelagnum, sum hjálpir til at halda Fjósið í gongd.',
     aboutButton: 'Møt liðið',
 
     mapTag: 'Finn okkum',
@@ -77,16 +77,16 @@ const fo = {
   },
 
   booking: {
-    pageTag: 'Einans við avtalu',
+    pageTag: 'Einans eftir avtalu',
     title: 'Bóking',
     sectionTag: 'Ger eina bílegging',
     heading: 'Bílegg Fjósið',
-    intro: 'Fjósið er einans opið við avtalu — vit taka ikki ímóti óboðnum gestum. Fyri at bíleggja, send okkum eitt teldupost, og vit svara so skjótt sum møguligt.',
-    infoGuests: 'Lágmark 10 gestir. Um bólkurin er minni, borgar tú enn fyri 10. Hámark er 49 gestir.',
-    infoAppointment: 'Vit eru einans opið við avtalu. Vinarliga set teg í samband við okkum áðrenn fyri at kanna tøkumøguleika.',
-    infoDescription: 'Tað hjálpir at vita hvat tú ætlar at nýta staðin til — eina máltíð, ein hátíð, ein fund — so vit kunnu gera okkum klárir.',
+    intro: 'Fjósið er einans opið eftir avtalu. Fyri at bíleggja, send okkum ein teldupost, og vit svara so skjótt sum møguligt.',
+    infoGuests: 'Lágmark er 10 gestir. Um bólkurin er minni enn 10 gestir, so verður tikið fyri 10 gestir. Hámark er 49 gestir.',
+    infoAppointment: 'Vit eru einans opið eftir avtalu. Vinarliga set teg í samband við okkum áðrenn fyri at kanna um tøkt er.',
+    infoDescription: 'Tað hjálpir at vita hvat tú ætlar at nýta Fjósið til — eina máltíð, ein hátíð, ein fund — so vit kunnu gera okkum klár.',
     ctaLabel: 'Send tínar spurningar til',
-    ctaNote: 'Vit svara so skjótt sum møguligt fyri at staðfesta tøkumøguleika.',
+    ctaNote: 'Vit svara tær skjótast gjørligt og vátta, um pláss er tøkt.',
     imageAlt: 'Inni í Fjósið',
     badgeGuests: '10 – 49 gestir',
     badgeSub: 'Lágmark bílegging',
@@ -143,7 +143,7 @@ const fo = {
 
     section3_tag: 'Bílegg',
     title4: 'At bíleggja',
-    text4: 'Fyri at bíleggja rúmið, far til bíleggingarsíðuna og send okkum eitt teldupost. Gev okkum at vita datuna, tal av fólkum og hvat tit hava brúk fyri rúmið til.',
+    text4: 'Fyri at bíleggja rúmið, far til bíleggingarsíðuna og send okkum ein teldupost. Gev okkum at vita datuna, tal av fólkum og hvat tit hava brúk fyri rúmið til.',
     bookingButton: 'Bóking',
   },
 
@@ -182,7 +182,7 @@ const fo = {
 
     section4_tag: 'Bílegg',
     title4: 'At koma í samband',
-    text4: 'Fyri at bíleggja hølið, far til bíleggingarsíðuna og send okkum eitt teldupost við datuni, tal av gestum og eini stuttri lýsing av tiltakinum.',
+    text4: 'Fyri at bíleggja hølið, far til bíleggingarsíðuna og send okkum ein teldupost við datuni, tal av gestum og eini stuttri lýsing av tiltakinum.',
     bookingButton: 'Bóking',
   },
 

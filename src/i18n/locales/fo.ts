@@ -32,8 +32,7 @@ const fo = {
     details3:
       'Fjósið er átt og rikið av fólki úr lokalsamfelagnum. Vit vilja varðveita ta hugnaligu og persónligu kensluna, so øll kenna seg vælkomin. Her kanst tú njóta eina góða máltíð í friðarligum og hugnaligum umhvørvi.',
 
-    offersTag: 'Upplivingar',
-    whatWeOffer: 'Vit bjóða',
+    offersTag: 'Vit bjóða',
     dining: 'Borðhald',
     events: 'Fundir og tiltøk',
     venue: 'Leiga Fjósið sum eitt høli',
@@ -120,26 +119,26 @@ const fo = {
     title: 'Fundir og ráðstevnur',
     introTag: 'Yvirlit',
     introTitle: 'Eitt praktiskt fundarhøli',
-    text: 'Fjósið kann leigast til fundir og tiltøk. Rúmið hóskur til smærri bólkar og kann brúkast til seminar, arbeiðsdag ella líknandi. Tað liggur í Bø, sum er lítið úr leiðini, men tað merkir eisini, at tað er stilt.',
+    text: 'Fjósið kann leigast til fundir og tiltøk. Rúmið hóskar til smærri bólkar og kann brúkast til seminar, arbeiðsdag ella líknandi. Fjósið liggur friðarliga og vakurt í Bø, ikki langt frá flogvøllinum.',
 
     feature1_title: 'AV-útbúnaður',
     feature1_desc: 'Uppvørpa, hátalari og flippboard eru við.',
     feature2_title: 'Matur og drykkur',
     feature2_desc: 'Kaffi, te og vatn ígjøgnum dagin. Morgunmatur, miðmáli ella kaka kann bíleggjas áðrenn.',
     feature3_title: 'Prísir',
-    feature3_desc: 'Hálvur dagur 3.000 kr. (uttan mvg) · Heildagur 6.000 kr. (uttan mvg).',
+    feature3_desc: 'Hálvur dagur 3.000 kr. · Heildagur 6.000 kr.',
     featuresTag: 'Við í leiguni',
     featuresTitle: 'Hetta er við',
 
     section1_tag: 'Fundir',
     title2: 'Fundarleiga',
     text2: 'Vit hava uppvørpu, hátalara og flippboard. Kaffi, te og vatn eru við, og matur kann bíleggjas afturat — morgunmatur, miðmáli ella kaka. Hetta verður at bíleggja áðrenn.',
-    text2b: 'Hálvur dagur: 3.000 kr. (uttan mvg). Heildagur: 6.000 kr. (uttan mvg).',
+    text2b: 'Hálvur dagur: 3.000 kr. Heildagur: 6.000 kr.',
 
     section2_tag: 'Privat tiltøk',
     title3: 'Privat tiltak leiga',
     text3: 'Um tú skalt halda føðingardag ella líknandi uttan fyri heimið, kanst tú leiga hølið og koma við matinum sjálv/ur. Tú ruddar upp eftir, og vit vaska.',
-    text3b: 'Kostar: 3.750 kr. (uttan mvg).',
+    text3b: 'Kostar 3.750 kr.',
 
     section3_tag: 'Bílegg',
     title4: 'At bíleggja',
@@ -159,12 +158,10 @@ const fo = {
     halfDayLabel: 'Hálvur dagur',
     halfDayPrice: '3.000',
     halfDayUnit: 'kr.',
-    halfDayVat: 'uttan mvg',
     halfDayDesc: 'Fyri styttri samkomur.',
     fullDayLabel: 'Heildagur',
     fullDayPrice: '6.000',
     fullDayUnit: 'kr.',
-    fullDayVat: 'uttan mvg',
     fullDayDesc: 'Adgangur heilan dag frá uppseting til reingerð.',
 
     highlight1_title: 'Smidligur tíðarrammi',

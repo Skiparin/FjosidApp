@@ -40,7 +40,7 @@ const fo = {
     teamTag: 'Fólkið',
     aboutUs: 'Um okkum',
     aboutTeaser: 'Aftanfyri Fjósið er ein lítil bólkur av fólki úr lokalsamfelagnum, sum hjálpir til at halda staðin gangandi.',
-    aboutButton: 'Møt liðið',
+    aboutButton: 'Møt liðnum',
 
     mapTag: 'Finn okkum',
     location: 'Staðseting',
@@ -49,7 +49,7 @@ const fo = {
   about: {
     pageTag: 'Søgan okkar',
     title: 'Um Fjósið',
-    intro: 'Ein bóndargarður í Bø, sum varð til eina matstovu. Hetta er lítið um fólkini bak við.',
+    intro: 'Ein bóndargarður í Bø, sum varð til eina matstovu. Hetta er eitt sindur um fólkini aftanfyri.',
 
     historyTag: 'Har tað byrjaði',
     historyTitle: 'Søgan um Fjósið',
@@ -60,11 +60,11 @@ const fo = {
     joanText2: 'Sonur hansara, Heri, tók við garðinum í 1996 og gjørdi seinni tann efra partin av fjósinum til eina matstovu og eitt høli.',
 
     teamTag: 'Eigarar',
-    teamTitle: 'Møt liðið',
+    teamTitle: 'Møt liðnum',
     teamSubtitle: 'Fólkini, sum reka Fjósið.',
 
     jennyHeri:
-      'Heri er bóndin og tann, sum hugsakaði at gera ein part av fjósinum til eina matstovu. Jenny er konan hansara og ræður yvir køkinum og flest alt annað.',
+      'Heri kom við hugskotinum at gera part av fjósinum til eina matstovu. Jenny er kona hansara og ræður yvir køkinum og annars tí mesta.',
     eydsteinEllef:
       'Eystein og Ellef eru vinavinir og reka Bluegate.fo. Teir bjóða bátferðir í ønum, sum nøkur gestir samleggja við vitjan til Fjósið.',
     eydfinnPoula:

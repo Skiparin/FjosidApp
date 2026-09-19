@@ -136,9 +136,6 @@ export default function Home() {
             <p className="text-amber-500 text-xs uppercase tracking-widest font-medium mb-3">
               {t('home.offersTag')}
             </p>
-            <h2 className="font-display text-4xl sm:text-5xl font-semibold text-white">
-              {t('home.whatWeOffer')}
-            </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             <OfferCard img="/images/luttakarar_3_2.jpg" label={t('home.dining')}  href="/images/Menu.pdf" navigate={navigate} />

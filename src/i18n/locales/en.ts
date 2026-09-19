@@ -32,8 +32,7 @@ const en = {
     details3:
       "Fjósið is owned and run by people from the local community. It is a small place, and we keep it that way. We want it to feel like somewhere you can come for a decent meal without any pretension.",
 
-    offersTag: 'Experiences',
-    whatWeOffer: 'What we offer',
+    offersTag: 'What we offer',
     dining: 'Dining',
     events: 'Meetings and Events',
     venue: 'Rent Fjósið as a Venue',
@@ -120,26 +119,26 @@ const en = {
     title: 'Meetings and Conferences',
     introTag: 'Overview',
     introTitle: 'A practical venue for meetings',
-    text: "Fjósið can be rented for meetings and events. The space works for small groups and can be set up for a seminar, a work day or a similar gathering. It is located in Bøur, which is a bit out of the way, but that also means it is quiet.",
+    text: 'Fjósið can be rented for meetings and events. The space works for small groups and can be set up for a seminar, a work day or a similar gathering. It is in peaceful, beautiful Bøur, not far from the airport.',
 
     feature1_title: 'AV Equipment',
     feature1_desc: 'Overhead projector, loudspeaker and flipboard included.',
     feature2_title: 'Catering',
     feature2_desc: 'Coffee, tea and water during the day. Breakfast, lunch or cake can be ordered in advance.',
     feature3_title: 'Pricing',
-    feature3_desc: 'Half-day 3,000 DKK (excl. VAT) · Full day 6,000 DKK (excl. VAT).',
+    feature3_desc: 'Half-day 3,000 DKK · Full day 6,000 DKK.',
     featuresTag: 'Included',
     featuresTitle: 'What is included',
 
     section1_tag: 'Meetings',
     title2: 'Meeting Rental',
     text2: 'We have an overhead projector, loudspeaker and a flipboard. Coffee, tea and water are included, and food can be ordered — breakfast, lunch, cake or a combination. This must be ordered in advance.',
-    text2b: 'Half day: 3,000 DKK (excl. VAT). Full day: 6,000 DKK (excl. VAT).',
+    text2b: 'Half day: 3,000 DKK. Full day: 6,000 DKK.',
 
     section2_tag: 'Private events',
     title3: 'Private Event Rental',
     text3: 'If you want to celebrate a birthday or something similar outside the home, you can rent the venue and bring your own food. You clean up afterwards; we handle the washing.',
-    text3b: 'Cost: 3,750 DKK (excl. VAT).',
+    text3b: 'Cost: 3,750 DKK.',
 
     section3_tag: 'Reserve',
     title4: 'Making a Booking',
@@ -159,12 +158,10 @@ const en = {
     halfDayLabel: 'Half Day',
     halfDayPrice: '3,000',
     halfDayUnit: 'DKK',
-    halfDayVat: 'excl. VAT',
     halfDayDesc: 'For shorter gatherings.',
     fullDayLabel: 'Full Day',
     fullDayPrice: '6,000',
     fullDayUnit: 'DKK',
-    fullDayVat: 'excl. VAT',
     fullDayDesc: 'All-day access from setup to cleanup.',
 
     highlight1_title: 'Flexible Hours',

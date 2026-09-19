@@ -23,14 +23,12 @@ export default function RentAsVenue() {
       labelKey: 'rentAsVenue.halfDayLabel',
       priceKey: 'rentAsVenue.halfDayPrice',
       unitKey:  'rentAsVenue.halfDayUnit',
-      vatKey:   'rentAsVenue.halfDayVat',
       descKey:  'rentAsVenue.halfDayDesc',
     },
     {
       labelKey: 'rentAsVenue.fullDayLabel',
       priceKey: 'rentAsVenue.fullDayPrice',
       unitKey:  'rentAsVenue.fullDayUnit',
-      vatKey:   'rentAsVenue.fullDayVat',
       descKey:  'rentAsVenue.fullDayDesc',
     },
   ];
@@ -72,14 +70,13 @@ export default function RentAsVenue() {
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {pricingOptions.map(({ labelKey, priceKey, unitKey, vatKey, descKey }) => (
+            {pricingOptions.map(({ labelKey, priceKey, unitKey, descKey }) => (
               <div key={labelKey} className="bg-white border border-stone-100 rounded p-8 text-center shadow-sm">
                 <p className="text-stone-400 text-sm uppercase tracking-widest mb-3">{t(labelKey)}</p>
                 <p className="font-display text-5xl font-semibold text-stone-800 mb-1">
                   {t(priceKey)}{' '}
                   <span className="text-2xl text-stone-400">{t(unitKey)}</span>
                 </p>
-                <p className="text-stone-400 text-xs mb-5">{t(vatKey)}</p>
                 <p className="text-stone-500 text-sm leading-relaxed">{t(descKey)}</p>
               </div>
             ))}
